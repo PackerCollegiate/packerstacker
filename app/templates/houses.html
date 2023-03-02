@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1> This is {{ user.username }}'s list of properties!</h1>
+    {% for house in houses %}
+    <div><p><b>{{ house.address }}</b>, at {{ house.sqft }} square feet</p></div>
+    {% endfor %}
+{% endblock %}
