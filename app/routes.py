@@ -36,11 +36,6 @@ def index():
     return render_template('index.html', title='Home', form=form,
                            posts=posts.items, next_url=next_url,
                            prev_url=prev_url)
-@app.route('/songs')
-def songChallenge():
-    user = {'username': 'Miguel'}
-    posts = [{'title': 'Back in the USSR','artist': 'The Beatles'}, {'title': 'Billy Jean','artist': 'Michael Jackson'}]
-    return render_template('songs.html', title = "song list!", user = user, posts = posts)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -58,22 +53,7 @@ def login():
             next_page = url_for('index')
         return redirect(next_page)
     return render_template('login.html', title='Sign In', form=form)
-
-@app.route('/willowlogin', methods=['GET', 'POST'])
-def willowlogin():
-    form = WillowLoginForm()
-    if form.validate_on_submit():
-        flash('Login requested for user {}, remember_me={}'.format(
-            form.username.data, form.remember_me.data))
-        return redirect(url_for('willow'))
-    return render_template('houselogin.html', title='Willow Sign In', form=form)
-
-@app.route('/willow')
-def willow():
-    user = {'username': 'Miguel'}
-    houses = [{'address': '2 River Terrace','sqft': '3490'}, {'address': '23 Greenwood Plaza','sqft': '2300'}]
-    return render_template('houses.html', title = "willow homepage", user = user, houses = houses)
-
+    
 @app.route('/logout')
 def logout():
     logout_user()
@@ -107,7 +87,7 @@ def user(username):
     form = EmptyForm()
     return render_template('user.html', user=user, posts=posts.items,
                            next_url=next_url, prev_url=prev_url, form=form)
-                           
+
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
