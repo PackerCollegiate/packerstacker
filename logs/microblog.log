@@ -31,3 +31,5 @@ Traceback (most recent call last):
 jinja2.exceptions.TemplateSyntaxError: unexpected '*'
 2023-03-06 08:40:40,310 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
 2023-03-06 08:41:22,484 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-03-06 08:43:11,924 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-03-06 08:43:52,054 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
