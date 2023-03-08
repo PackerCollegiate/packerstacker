@@ -6,7 +6,11 @@
           <td><img src="{{ user.avatar(128) }}"></td>
           <td>
             <h1>User: {{ user.username }}</h1>
+<<<<<<< Updated upstream
             {%if user.type %}<p>Teacher</p>{% else %} <p>Student </p>{% endif %}
+=======
+            {%if user.type %}<p>Teacher</p> {% else %} <p>Student </p>{% endif %}
+>>>>>>> Stashed changes
             {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
             {% if user.last_seen %}<p>Last seen on: {{ user.last_seen }}</p>{% endif %}
             <p>{{ user.followers.count() }} followers, {{ user.followed.count() }} following.</p>
