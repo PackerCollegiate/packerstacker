@@ -4,7 +4,7 @@ os.environ['DATABASE_URL'] = 'sqlite://'
 from datetime import datetime, timedelta
 import unittest
 from app import app, db
-from app.models import User, Post
+from app.models import User, Question
 
 class UserModelCase(unittest.TestCase):
     def setUp(self):
@@ -52,7 +52,7 @@ class UserModelCase(unittest.TestCase):
         self.assertEqual(u1.followed.count(), 0)
         self.assertEqual(u2.followers.count(), 0)
 
-    def test_follow_posts(self):
+    def test_follow_questions(self):
         # create four users
         u1 = User(username='john', email='john@example.com')
         u2 = User(username='susan', email='susan@example.com')
@@ -60,15 +60,15 @@ class UserModelCase(unittest.TestCase):
         u4 = User(username='david', email='david@example.com')
         db.session.add_all([u1, u2, u3, u4])
 
-        # create four posts
+        # create four questions
         now = datetime.utcnow()
-        p1 = Post(body="post from john", author=u1,
+        p1 = Question(body="question from john", author=u1,
                   timestamp=now + timedelta(seconds=1))
-        p2 = Post(body="post from susan", author=u2,
+        p2 = Question(body="question from susan", author=u2,
                   timestamp=now + timedelta(seconds=4))
-        p3 = Post(body="post from mary", author=u3,
+        p3 = Question(body="question from mary", author=u3,
                   timestamp=now + timedelta(seconds=3))
-        p4 = Post(body="post from david", author=u4,
+        p4 = Question(body="question from david", author=u4,
                   timestamp=now + timedelta(seconds=2))
         db.session.add_all([p1, p2, p3, p4])
         db.session.commit()
@@ -80,11 +80,11 @@ class UserModelCase(unittest.TestCase):
         u3.follow(u4)  # mary follows david
         db.session.commit()
 
-        # check the followed posts of each user
-        f1 = u1.followed_posts().all()
-        f2 = u2.followed_posts().all()
-        f3 = u3.followed_posts().all()
-        f4 = u4.followed_posts().all()
+        # check the followed questions of each user
+        f1 = u1.followed_questions().all()
+        f2 = u2.followed_questions().all()
+        f3 = u3.followed_questions().all()
+        f4 = u4.followed_questions().all()
         self.assertEqual(f1, [p2, p4, p1])
         self.assertEqual(f2, [p2, p3])
         self.assertEqual(f3, [p3, p4])

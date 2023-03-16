@@ -32,13 +32,13 @@
         </tr>
     </table>
     <hr>
-    {% for post in posts %}
-        {% include '_post.html' %}
+    {% for question in questions %}
+        {% include '_question.html' %}
     {% endfor %}
     {% if prev_url %}
-    <a href="{{ prev_url }}">Newer posts</a>
+    <a href="{{ prev_url }}">Newer questions</a>
     {% endif %}
     {% if next_url %}
-    <a href="{{ next_url }}">Older posts</a>
+    <a href="{{ next_url }}">Older questions</a>
     {% endif %}
 {% endblock %}

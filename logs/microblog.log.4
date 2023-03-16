@@ -1,4 +1,14 @@
-2023-02-23 08:44:56,465 ERROR: Exception on / [GET] [in /opt/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+2023-02-21 12:08:19,787 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:44]
+2023-02-23 08:18:01,390 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:44]
+2023-02-23 08:18:21,979 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:44]
+2023-02-23 08:18:37,176 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:44]
+2023-02-23 08:24:12,613 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:44]
+2023-02-23 08:24:58,307 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:44]
+2023-02-23 08:25:42,983 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:44]
+2023-02-23 08:25:54,053 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:44]
+2023-02-23 08:32:29,280 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:44]
+2023-02-23 08:43:10,648 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:44]
+2023-02-23 08:43:19,284 ERROR: Exception on / [GET] [in /opt/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/opt/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -29,7 +39,7 @@ Traceback (most recent call last):
   File "/Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/templates/index.html", line 20, in template
     {% endblock %}
 jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
-2023-02-23 08:44:56,547 ERROR: Exception on / [GET] [in /opt/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+2023-02-23 08:43:19,291 ERROR: Exception on / [GET] [in /opt/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/opt/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -60,12 +70,7 @@ Traceback (most recent call last):
   File "/Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/templates/index.html", line 20, in template
     {% endblock %}
 jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
-2023-02-23 08:52:42,925 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:44]
-2023-02-23 11:28:13,965 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:44]
-2023-02-27 17:28:41,542 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:46]
-2023-03-01 09:29:13,762 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:46]
-2023-03-01 09:29:57,778 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:46]
-2023-03-01 09:30:11,029 ERROR: Exception on /login [GET] [in /opt/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+2023-02-23 08:43:29,155 ERROR: Exception on /index [GET] [in /opt/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/opt/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -75,52 +80,25 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/opt/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/routes.py", line 60, in login
-    return render_template('login.html', title='Sign In', form=form)
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
-    return _render(app, template, context)
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 130, in _render
-    rv = template.render(context)
-  File "/opt/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
-    self.environment.handle_exception()
+  File "/opt/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/routes.py", line 30, in index
+    return render_template("index.html", title='Home Page', form=form,
+  File "/opt/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 146, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/opt/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/opt/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/opt/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/opt/anaconda3/lib/python3.9/site-packages/jinja2/loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "/opt/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
   File "/opt/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/templates/login.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 62, in get_source
-    return self._get_source_fast(environment, template)
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 98, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: bootstrap/base.html
-2023-03-01 09:30:11,287 ERROR: Exception on /login [GET] [in /opt/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/routes.py", line 60, in login
-    return render_template('login.html', title='Sign In', form=form)
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
-    return _render(app, template, context)
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 130, in _render
-    rv = template.render(context)
-  File "/opt/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
-    self.environment.handle_exception()
-  File "/opt/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/templates/login.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 62, in get_source
-    return self._get_source_fast(environment, template)
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 98, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: bootstrap/base.html
-2023-03-01 09:33:08,605 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:46]
+  File "/Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/templates/index.html", line 20, in template
+    {% endblock %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2023-02-23 08:44:51,109 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:44]

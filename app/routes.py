@@ -1,8 +1,8 @@
 from flask import render_template, flash, redirect, url_for
 from app import app, db
-from app.forms import LoginForm, WillowLoginForm, RegistrationForm, EditProfileForm, EmptyForm, PostForm
+from app.forms import LoginForm, WillowLoginForm, RegistrationForm, EditProfileForm, EmptyForm, QuestionForm
 from flask_login import current_user, login_user
-from app.models import User, Post
+from app.models import User, Question
 from flask_login import logout_user
 from flask_login import login_required
 from flask import request
@@ -19,22 +19,22 @@ def before_request():
 @app.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
-    form = PostForm()
+    form = QuestionForm()
     if form.validate_on_submit():
-        post = Post(body=form.post.data, author=current_user)
-        db.session.add(post)
+        question = Question(body=form.question.data, author=current_user)
+        db.session.add(question)
         db.session.commit()
-        flash('Your post is now live!')
+        flash('Your question is now live!')
         return redirect(url_for('index'))
     page = request.args.get('page', 1, type=int)
-    posts = current_user.followed_posts().paginate(
-        page=page, per_page=app.config['POSTS_PER_PAGE'], error_out=False)
-    next_url = url_for('index', page=posts.next_num) \
-        if posts.has_next else None
-    prev_url = url_for('index', page=posts.prev_num) \
-        if posts.has_prev else None
+    questions = current_user.followed_questions().paginate(
+        page=page, per_page=app.config['QUESTIONS_PER_PAGE'], error_out=False)
+    next_url = url_for('index', page=questions.next_num) \
+        if questions.has_next else None
+    prev_url = url_for('index', page=questions.prev_num) \
+        if questions.has_prev else None
     return render_template('index.html', title='Home', form=form,
-                           posts=posts.items, next_url=next_url,
+                           questions=questions.items, next_url=next_url,
                            prev_url=prev_url)
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -78,14 +78,14 @@ def register():
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
     page = request.args.get('page', 1, type=int)
-    posts = user.posts.order_by(Post.timestamp.desc()).paginate(
-        page=page, per_page=app.config['POSTS_PER_PAGE'], error_out=False)
-    next_url = url_for('user', username=user.username, page=posts.next_num) \
-        if posts.has_next else None
-    prev_url = url_for('user', username=user.username, page=posts.prev_num) \
-        if posts.has_prev else None
+    questions = user.questions.order_by(Question.timestamp.desc()).paginate(
+        page=page, per_page=app.config['QUESTIONS_PER_PAGE'], error_out=False)
+    next_url = url_for('user', username=user.username, page=questions.next_num) \
+        if questions.has_next else None
+    prev_url = url_for('user', username=user.username, page=questions.prev_num) \
+        if questions.has_prev else None
     form = EmptyForm()
-    return render_template('user.html', user=user, posts=posts.items,
+    return render_template('user.html', user=user, questions=questions.items,
                            next_url=next_url, prev_url=prev_url, form=form)
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
@@ -145,9 +145,12 @@ def unfollow(username):
 @login_required
 def explore():
     page = request.args.get('page', 1, type=int)
-    posts = Post.query.order_by(Post.timestamp.desc()).paginate(page=page, per_page=app.config['POSTS_PER_PAGE'], error_out=False)
-    next_url = url_for('explore', page=posts.next_num) \
-        if posts.has_next else None
-    prev_url = url_for('explore', page=posts.prev_num) \
-        if posts.has_prev else None
-    return render_template("index.html", title='Explore', posts=posts.items,next_url=next_url, prev_url=prev_url)
+    questions = Question.query.order_by(Question.timestamp.desc()).paginate(page=page, per_page=app.config['QUESTIONS_PER_PAGE'], error_out=False)
+    next_url = url_for('explore', page=questions.next_num) \
+        if questions.has_next else None
+    prev_url = url_for('explore', page=questions.prev_num) \
+        if questions.has_prev else None
+    return render_template("index.html", title='Explore', questions=questions.items,next_url=next_url, prev_url=prev_url)
+
+
+#@app.route('/question/')
