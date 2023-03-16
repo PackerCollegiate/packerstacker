@@ -37,3 +37,4 @@ jinja2.exceptions.TemplateSyntaxError: unexpected '*'
 2023-03-06 08:46:21,429 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
 2023-03-06 08:49:05,998 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
 2023-03-06 08:52:02,964 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
+2023-03-06 08:53:14,409 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
