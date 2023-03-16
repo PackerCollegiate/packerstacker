@@ -30,3 +30,4 @@ Traceback (most recent call last):
     questions = Question.query.order_by(Question.timestamp.desc()).paginate(page=page, per_page=app.config['QUESTION_PER_PAGE'], error_out=False)
 KeyError: 'QUESTION_PER_PAGE'
 2023-03-16 09:13:44,371 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-03-16 13:40:26,301 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
