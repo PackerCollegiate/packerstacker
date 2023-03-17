@@ -1,0 +1,95 @@
+2023-03-16 08:55:40,237 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-03-16 08:55:47,901 ERROR: Exception on /explore [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 148, in explore
+    questions = Question.query.order_by(Question.timestamp.desc()).paginate(page=page, per_page=app.config['QUESTION_PER_PAGE'], error_out=False)
+KeyError: 'QUESTION_PER_PAGE'
+2023-03-16 08:55:49,312 ERROR: Exception on /explore [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 148, in explore
+    questions = Question.query.order_by(Question.timestamp.desc()).paginate(page=page, per_page=app.config['QUESTION_PER_PAGE'], error_out=False)
+KeyError: 'QUESTION_PER_PAGE'
+2023-03-16 09:13:44,371 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-03-16 13:40:26,301 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-03-17 10:53:37,660 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-03-17 10:57:33,904 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
+2023-03-17 10:58:50,242 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-03-17 11:00:58,992 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-03-17 11:01:03,359 ERROR: Exception on /question/1 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1693, in _entity_namespace_key
+    return getattr(ns, key)
+AttributeError: type object 'Question' has no attribute 'question'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 156, in question_page
+    question = Question.query.filter_by(question=question).first_or_404()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1793, in filter_by
+    clauses = [
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1794, in <listcomp>
+    _entity_namespace_key(from_entity, key) == value
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1695, in _entity_namespace_key
+    util.raise_(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+sqlalchemy.exc.InvalidRequestError: Entity namespace for "question" has no property "question"
+2023-03-17 11:01:28,250 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-03-17 11:01:37,089 ERROR: Exception on /question/<Question ?> [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1693, in _entity_namespace_key
+    return getattr(ns, key)
+AttributeError: type object 'Question' has no attribute 'question'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 156, in question_page
+    question = Question.query.filter_by(question=question).first_or_404()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1793, in filter_by
+    clauses = [
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1794, in <listcomp>
+    _entity_namespace_key(from_entity, key) == value
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1695, in _entity_namespace_key
+    util.raise_(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+sqlalchemy.exc.InvalidRequestError: Entity namespace for "question" has no property "question"
+2023-03-17 11:04:18,687 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
