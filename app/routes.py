@@ -142,7 +142,6 @@ def unfollow(username):
         return redirect(url_for('index'))
 
 @app.route('/explore')
-@login_required
 def explore():
     page = request.args.get('page', 1, type=int)
     questions = Question.query.order_by(Question.timestamp.desc()).paginate(page=page, per_page=app.config['QUESTIONS_PER_PAGE'], error_out=False)
@@ -153,4 +152,8 @@ def explore():
     return render_template("index.html", title='Explore', questions=questions.items,next_url=next_url, prev_url=prev_url)
 
 
-#@app.route('/question/')
+@app.route('/question/<question.id>')
+def question_page(question):
+    question = Question.query.filter_by(question=question).first_or_404()
+    page = request.arge.get('page', 1, type=int)
+    return render_template("question_page.html", title='<question>', question = question)
