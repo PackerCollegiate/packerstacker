@@ -151,7 +151,7 @@ def explore():
         if questions.has_prev else None
     return render_template("index.html", title='Explore', questions=questions.items,next_url=next_url, prev_url=prev_url)
 
-@app.route('/question/<id>')
+@app.route('/q/<id>')
 def question_page(id):
     question = Question.query.filter_by(id=id).first_or_404()
     page = request.args.get('page', 1, type=int)

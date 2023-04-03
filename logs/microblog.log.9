@@ -1,4 +1,4 @@
-2023-03-06 08:39:48,888 ERROR: Exception on /user/bestie [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+2023-03-17 11:04:24,748 ERROR: Exception on / [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -10,52 +10,36 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 88, in user
-    return render_template('user.html', user=user, posts=posts.items,
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 146, in render_template
-    template = app.jinja_env.get_or_select_template(template_name_or_list)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1010, in get_template
-    return self._load_template(name, globals)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 969, in _load_template
-    template = self.loader.load(self, name, self.make_globals(globals))
-  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/loaders.py", line 138, in load
-    code = environment.compile(source, name, filename)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 768, in compile
-    self.handle_exception(source=source_hint)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 36, in index
+    return render_template('index.html', title='Home', form=form,
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
   File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/user.html", line 9, in template
-    {%if user.type %}<p>{{ *Teacher}}</p>{% endif %}
-jinja2.exceptions.TemplateSyntaxError: unexpected '*'
-2023-03-06 08:40:40,310 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-06 08:41:22,484 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-06 08:43:11,924 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-06 08:43:52,054 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-06 08:45:10,696 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-06 08:46:21,429 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
-<<<<<<< Updated upstream
-2023-03-06 08:49:05,998 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
-2023-03-06 08:52:02,964 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
-=======
-2023-03-06 08:49:15,021 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-06 08:50:02,946 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-06 08:53:09,960 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-06 08:53:48,145 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
->>>>>>> Stashed changes
-2023-03-08 12:46:26,565 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-08 13:43:02,252 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-08 13:44:22,239 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-08 13:46:25,845 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-08 13:48:17,817 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-08 13:48:54,450 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-08 13:50:53,604 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-08 13:51:12,895 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-16 08:47:33,490 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-16 08:47:45,848 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-16 08:47:51,604 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-16 08:47:57,584 ERROR: Exception on / [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
+    {% block body -%}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
+    {% block content -%}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 48, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/index.html", line 11, in block 'app_content'
+    {% include '_question.html' %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/_question.html", line 4, in top-level template code
+    <a href="{{ url_for('question_page', question) }}">
+TypeError: url_for() takes 2 positional arguments but 3 were given
+2023-03-17 11:04:26,766 ERROR: Exception on / [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -67,11 +51,36 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 31, in index
-    page=page, per_page=app.config['QUESTIONS_PER_PAGE'], error_out=False)
-KeyError: 'QUESTIONS_PER_PAGE'
-2023-03-16 08:48:34,803 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-16 08:48:36,896 ERROR: Exception on / [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 36, in index
+    return render_template('index.html', title='Home', form=form,
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
+    {% block body -%}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
+    {% block content -%}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 48, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/index.html", line 11, in block 'app_content'
+    {% include '_question.html' %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/_question.html", line 4, in top-level template code
+    <a href="{{ url_for('question_page', question) }}">
+TypeError: url_for() takes 2 positional arguments but 3 were given
+2023-03-17 11:04:28,847 ERROR: Exception on /index [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -83,38 +92,32 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 31, in index
-    page=page, per_page=app.config['QUESTIONS_PER_PAGE'], error_out=False)
-KeyError: 'QUESTIONS_PER_PAGE'
-2023-03-16 08:48:38,431 ERROR: Exception on / [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 31, in index
-    page=page, per_page=app.config['QUESTIONS_PER_PAGE'], error_out=False)
-KeyError: 'QUESTIONS_PER_PAGE'
-2023-03-16 08:48:38,584 ERROR: Exception on / [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 31, in index
-    page=page, per_page=app.config['QUESTIONS_PER_PAGE'], error_out=False)
-KeyError: 'QUESTIONS_PER_PAGE'
-2023-03-16 08:50:47,517 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-16 08:53:12,482 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 36, in index
+    return render_template('index.html', title='Home', form=form,
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
+    {% block body -%}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
+    {% block content -%}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 48, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/index.html", line 11, in block 'app_content'
+    {% include '_question.html' %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/_question.html", line 4, in top-level template code
+    <a href="{{ url_for('question_page', question) }}">
+TypeError: url_for() takes 2 positional arguments but 3 were given

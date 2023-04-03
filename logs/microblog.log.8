@@ -1,5 +1,43 @@
-2023-03-16 08:55:40,237 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-16 08:55:47,901 ERROR: Exception on /explore [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+2023-03-17 11:04:29,685 ERROR: Exception on /explore [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 152, in explore
+    return render_template("index.html", title='Explore', questions=questions.items,next_url=next_url, prev_url=prev_url)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
+    {% block body -%}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
+    {% block content -%}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 48, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/index.html", line 11, in block 'app_content'
+    {% include '_question.html' %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/_question.html", line 4, in top-level template code
+    <a href="{{ url_for('question_page', question) }}">
+TypeError: url_for() takes 2 positional arguments but 3 were given
+2023-03-17 11:04:30,253 ERROR: Exception on /index [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -11,67 +49,37 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 148, in explore
-    questions = Question.query.order_by(Question.timestamp.desc()).paginate(page=page, per_page=app.config['QUESTION_PER_PAGE'], error_out=False)
-KeyError: 'QUESTION_PER_PAGE'
-2023-03-16 08:55:49,312 ERROR: Exception on /explore [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 148, in explore
-    questions = Question.query.order_by(Question.timestamp.desc()).paginate(page=page, per_page=app.config['QUESTION_PER_PAGE'], error_out=False)
-KeyError: 'QUESTION_PER_PAGE'
-2023-03-16 09:13:44,371 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-16 13:40:26,301 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-17 10:53:37,660 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-17 10:57:33,904 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
-2023-03-17 10:58:50,242 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-17 11:00:58,992 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-17 11:01:03,359 ERROR: Exception on /question/1 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1693, in _entity_namespace_key
-    return getattr(ns, key)
-AttributeError: type object 'Question' has no attribute 'question'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 156, in question_page
-    question = Question.query.filter_by(question=question).first_or_404()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1793, in filter_by
-    clauses = [
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1794, in <listcomp>
-    _entity_namespace_key(from_entity, key) == value
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1695, in _entity_namespace_key
-    util.raise_(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
-    raise exception
-sqlalchemy.exc.InvalidRequestError: Entity namespace for "question" has no property "question"
-2023-03-17 11:01:28,250 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-17 11:01:37,089 ERROR: Exception on /question/<Question ?> [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1693, in _entity_namespace_key
-    return getattr(ns, key)
-AttributeError: type object 'Question' has no attribute 'question'
-
-The above exception was the direct cause of the following exception:
-
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 36, in index
+    return render_template('index.html', title='Home', form=form,
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
+    {% block body -%}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
+    {% block content -%}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 48, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/index.html", line 11, in block 'app_content'
+    {% include '_question.html' %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/_question.html", line 4, in top-level template code
+    <a href="{{ url_for('question_page', question) }}">
+TypeError: url_for() takes 2 positional arguments but 3 were given
+2023-03-17 11:05:35,495 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-03-17 11:05:42,909 ERROR: Exception on /question/<Question ?> [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -82,14 +90,6 @@ Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
   File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 156, in question_page
-    question = Question.query.filter_by(question=question).first_or_404()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1793, in filter_by
-    clauses = [
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1794, in <listcomp>
-    _entity_namespace_key(from_entity, key) == value
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1695, in _entity_namespace_key
-    util.raise_(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
-    raise exception
-sqlalchemy.exc.InvalidRequestError: Entity namespace for "question" has no property "question"
-2023-03-17 11:04:18,687 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+    question = Question.query.filter_by(id=question.id).first_or_404()
+AttributeError: 'str' object has no attribute 'id'
+2023-03-17 11:09:01,966 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
