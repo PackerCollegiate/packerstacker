@@ -1,101 +1,84 @@
-2023-03-01 09:36:01,549 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:46]
-2023-03-01 09:37:39,552 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:46]
-2023-03-01 09:38:36,335 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:46]
-2023-03-01 09:40:58,363 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:46]
-2023-03-01 21:06:38,724 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:46]
-2023-03-01 21:07:43,267 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:46]
-2023-03-01 21:12:44,440 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:46]
-2023-03-01 21:12:51,774 ERROR: Exception on /login [GET] [in /opt/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+2023-03-17 11:22:12,849 ERROR: Exception on /question/1 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
     rv = self.dispatch_request()
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/routes.py", line 60, in login
-    return render_template('login.html', title='Sign In', form=form)
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 158, in question_page
+    return render_template("question_page.html", title='Question', id = id)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
     return _render(app, template, context)
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 130, in _render
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 130, in _render
     rv = template.render(context)
-  File "/opt/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
     self.environment.handle_exception()
-  File "/opt/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/templates/login.html", line 2, in top-level template code
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/question_page.html", line 2, in top-level template code
     {% import 'bootstrap/wtf.html' as wtf %}
-  File "/Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/templates/base.html", line 1, in top-level template code
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
     {% block doc -%}
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
     {%- block html %}
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
     {% block body -%}
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
     {% block content -%}
-  File "/Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/templates/base.html", line 48, in block 'content'
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 48, in block 'content'
     {% block app_content %}{% endblock %}
-  File "/Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/templates/login.html", line 15, in block 'app_content'
-    <a href="{{ url_for('reset_password_request') }}">Click to Reset It</a>
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2031, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2020, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-  File "/opt/anaconda3/lib/python3.9/site-packages/werkzeug/routing/map.py", line 917, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'reset_password_request'. Did you mean 'edit_profile' instead?
-2023-03-01 21:12:53,577 ERROR: Exception on /login [GET] [in /opt/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/question_page.html", line 7, in block 'app_content'
+    {% include '_question.html' %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/_question.html", line 4, in top-level template code
+    <a href="{{ url_for('question_page', id=question.id, user=question.author) }}">
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'question' is undefined
+2023-04-03 13:15:52,001 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-03 13:16:00,939 ERROR: Exception on /question/1 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
     rv = self.dispatch_request()
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/routes.py", line 60, in login
-    return render_template('login.html', title='Sign In', form=form)
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 158, in question_page
+    return render_template("question_page.html", title='Question', id = id)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
     return _render(app, template, context)
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 130, in _render
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 130, in _render
     rv = template.render(context)
-  File "/opt/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
     self.environment.handle_exception()
-  File "/opt/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/templates/login.html", line 2, in top-level template code
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/question_page.html", line 2, in top-level template code
     {% import 'bootstrap/wtf.html' as wtf %}
-  File "/Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/templates/base.html", line 1, in top-level template code
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
     {% block doc -%}
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
     {%- block html %}
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
     {% block body -%}
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
     {% block content -%}
-  File "/Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/templates/base.html", line 48, in block 'content'
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 48, in block 'content'
     {% block app_content %}{% endblock %}
-  File "/Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/templates/login.html", line 15, in block 'app_content'
-    <a href="{{ url_for('reset_password_request') }}">Click to Reset It</a>
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2031, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-  File "/opt/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2020, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-  File "/opt/anaconda3/lib/python3.9/site-packages/werkzeug/routing/map.py", line 917, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'reset_password_request'. Did you mean 'edit_profile' instead?
-2023-03-01 21:13:17,566 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/microblog_repo/microblog/app/__init__.py:46]
-2023-03-02 11:55:42,748 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
-2023-03-02 11:59:24,008 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
-2023-03-02 12:02:00,021 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-02 12:03:40,257 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
-2023-03-06 08:38:18,293 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
-2023-03-06 08:38:29,838 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
-2023-03-06 08:39:03,751 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/question_page.html", line 7, in block 'app_content'
+    {% include '_question.html' %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/_question.html", line 4, in top-level template code
+    <a href="{{ url_for('question_page', id=question.id, question=question, user=question.author) }}">
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'question' is undefined
+2023-04-03 13:17:44,901 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
