@@ -16,6 +16,7 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
     questions = db.relationship('Question', backref='author', lazy='dynamic')
+    replies = db.relationship('Reply', backref='author', lazy='dynamic')
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)
     type = db.Column(db.Boolean())
@@ -59,12 +60,27 @@ class User(UserMixin, db.Model):
 
 class Question(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    body = db.Column(db.String(140))
+    body = db.Column(db.String(1000))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    replies = db.relationship('Reply', backref='op', lazy='dynamic')
 
     def __repr__(self):
         return '<Question {}>'.format(self.body)
+
+    def q_replies(self):
+        replies = Question.query.filter_by(post_id=self.id)
+        return replies.order_by(Question.timestamp.desc())
+
+class Reply(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    body = db.Column(db.String(1000))
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    post_id = db.Column(db.Integer, db.ForeignKey('question.id'))
+
+    def __repr__(self):
+        return '<Reply {}>'.format(self.body)
 
 @login.user_loader
 def load_user(id):

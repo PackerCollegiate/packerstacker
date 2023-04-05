@@ -1,4 +1,4 @@
-2023-03-17 11:16:01,032 ERROR: Exception on /question/1 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+2023-03-17 11:22:12,849 ERROR: Exception on /question/1 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -9,7 +9,7 @@ Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
   File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 158, in question_page
-    return render_template("question_page.html", title='<question>', id = id)
+    return render_template("question_page.html", title='Question', id = id)
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
     return _render(app, template, context)
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 130, in _render
@@ -32,53 +32,15 @@ Traceback (most recent call last):
     {% block content -%}
   File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 48, in block 'content'
     {% block app_content %}{% endblock %}
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/question_page.html", line 6, in block 'app_content'
-    <h1>User {{ user.username }} asks: </h1>
-  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 485, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'user' is undefined
-2023-03-17 11:16:51,507 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-17 11:16:56,317 ERROR: Exception on /question/1 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 158, in question_page
-    return render_template("question_page.html", title='<question>', id = id)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
-    return _render(app, template, context)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 130, in _render
-    rv = template.render(context)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
-    self.environment.handle_exception()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/question_page.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
-    {%- block html %}
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
-    {% block body -%}
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
-    {% block content -%}
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 48, in block 'content'
-    {% block app_content %}{% endblock %}
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/question_page.html", line 6, in block 'app_content'
-    <h1>User {{ question.author }} asks: </h1>
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/question_page.html", line 7, in block 'app_content'
+    {% include '_question.html' %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/_question.html", line 4, in top-level template code
+    <a href="{{ url_for('question_page', id=question.id, user=question.author) }}">
   File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 485, in getattr
     return getattr(obj, attribute)
 jinja2.exceptions.UndefinedError: 'question' is undefined
-2023-03-17 11:17:49,555 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-03-17 11:17:54,185 ERROR: Exception on / [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+2023-04-03 13:15:52,001 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-03 13:16:00,939 ERROR: Exception on /question/1 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -88,10 +50,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 36, in index
-    return render_template('index.html', title='Home', form=form,
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 158, in question_page
+    return render_template("question_page.html", title='Question', id = id)
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
     return _render(app, template, context)
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 130, in _render
@@ -100,7 +60,7 @@ Traceback (most recent call last):
     self.environment.handle_exception()
   File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/index.html", line 2, in top-level template code
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/question_page.html", line 2, in top-level template code
     {% import 'bootstrap/wtf.html' as wtf %}
   File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
@@ -114,15 +74,11 @@ Traceback (most recent call last):
     {% block content -%}
   File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 48, in block 'content'
     {% block app_content %}{% endblock %}
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/index.html", line 11, in block 'app_content'
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/question_page.html", line 7, in block 'app_content'
     {% include '_question.html' %}
   File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/_question.html", line 4, in top-level template code
-    <a href="{{ url_for('question_page', question=question, user=question.author) }}">
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2031, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2020, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-  File "/Applications/anaconda3/lib/python3.9/site-packages/werkzeug/routing/map.py", line 917, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'question_page' with values ['question', 'user']. Did you forget to specify values ['id']?
-2023-03-17 11:18:43,169 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+    <a href="{{ url_for('question_page', id=question.id, question=question, user=question.author) }}">
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'question' is undefined
+2023-04-03 13:17:44,901 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]

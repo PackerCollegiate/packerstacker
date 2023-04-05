@@ -1,8 +1,8 @@
 from flask import render_template, flash, redirect, url_for
 from app import app, db
-from app.forms import LoginForm, WillowLoginForm, RegistrationForm, EditProfileForm, EmptyForm, QuestionForm
+from app.forms import LoginForm, RegistrationForm, EditProfileForm, EmptyForm, QuestionForm, ReplyForm
 from flask_login import current_user, login_user
-from app.models import User, Question
+from app.models import User, Question, Reply
 from flask_login import logout_user
 from flask_login import login_required
 from flask import request
@@ -151,8 +151,22 @@ def explore():
         if questions.has_prev else None
     return render_template("index.html", title='Explore', questions=questions.items,next_url=next_url, prev_url=prev_url)
 
-@app.route('/q/<id>', methods=['GET'])
+@app.route('/q/<id>', methods=['GET', 'POST'])
 def question_page(id):
     question = Question.query.filter_by(id=id).first_or_404()
     page = request.args.get('page', 1, type=int)
-    return render_template("question_page.html", title='Question', question=question)
+    form = ReplyForm()
+    if form.validate_on_submit():
+        reply = Reply(body=form.reply.data, author=current_user, op=question)
+        db.session.add(reply)
+        db.session.commit()
+        redirect(url_for('question_page', id=id))
+    page = request.args.get('page', 1, type=int)
+    replies = question.replies().paginate(
+        page=page, per_page=app.config['QUESTIONS_PER_PAGE'], error_out=False)
+    next_url = url_for('q/<id>', page=replies.next_num) \
+        if replies.has_next else None
+    prev_url = url_for('q/<id>', page=replies.prev_num) \
+        if replies.has_prev else None
+    return render_template("question_page.html", title='Question', form=form, question=question,
+        replies=replies.items, next_url=next_url, prev_url=prev_url)
