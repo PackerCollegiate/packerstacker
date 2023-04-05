@@ -31,5 +31,9 @@ Traceback (most recent call last):
 KeyError: 'QUESTION_PER_PAGE'
 2023-03-16 09:13:44,371 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
 2023-03-16 13:40:26,301 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+<<<<<<< Updated upstream
 2023-03-17 10:53:37,660 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
 2023-03-17 10:57:33,904 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
+=======
+2023-03-17 10:47:48,495 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
+>>>>>>> Stashed changes
