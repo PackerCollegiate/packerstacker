@@ -3,7 +3,7 @@
 
 {% block app_content %}
 <table>
-  <h1>User {{ user }} asks: </h1>
+  <h1>{{ question.author.username }} asks: </h1>
       {% include '_question_view.html' %}
 
 </table>
