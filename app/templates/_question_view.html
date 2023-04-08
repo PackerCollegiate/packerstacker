@@ -5,7 +5,7 @@
             </td>
             <td>
                 <a href="{{ url_for('user', username=question.author.username) }}">
-                    {{ question.author.username }}
+                    {{ question.author.username }} {%if question.author.type %} &#x2713; {%endif%}
                 </a>
                 asks:
                 <br>

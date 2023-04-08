@@ -1,17 +1,17 @@
-<a style="text-decoration: none" href="{{ url_for('question_page', id=question.id) }}">
-  <table class="table table-hover">
-          <tr>
-              <td width="70px">
-                      <img src="{{ question.author.avatar(70) }}" />
-              </td>
-              <td>
-                  <a href="{{ url_for('user', username=question.author.username) }}">
-                      {{ question.author.username }}
-                  </a>
-                  asks:
-                  <br>
-                  {{ question.body }}
-              </td>
-          </tr>
-    </table>
-</a>
+<table class="table table-hover">
+      <tr>
+          <td width="70px">
+                  <img src="{{ question.author.avatar(70) }}" />
+          </td>
+          <td>
+              <a href="{{ url_for('user', username=question.author.username) }}">
+                  {{ question.author.username }} {%if question.author.type %} &#x2713 {%endif%}
+              </a>
+              asks:
+              <br>
+              <a style="text-decoration: none" href="{{ url_for('question_page', id=question.id) }}">
+                {{ question.body }}
+              </a>
+          </td>
+      </tr>
+</table>

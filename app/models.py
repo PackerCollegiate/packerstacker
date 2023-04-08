@@ -69,8 +69,8 @@ class Question(db.Model):
         return '<Question {}>'.format(self.body)
 
     def q_replies(self):
-        replies = Question.query.filter_by(post_id=self.id)
-        return replies.order_by(Question.timestamp.desc())
+        replies = Reply.query.filter_by(post_id=self.id)
+        return replies.order_by(Reply.timestamp.desc())
 
 class Reply(db.Model):
     id = db.Column(db.Integer, primary_key=True)

@@ -160,9 +160,10 @@ def question_page(id):
         reply = Reply(body=form.reply.data, author=current_user, op=question)
         db.session.add(reply)
         db.session.commit()
-        redirect(url_for('question_page', id=id))
+        flash('Thanks for answering!')
+        return redirect(url_for('question_page', id=id))
     page = request.args.get('page', 1, type=int)
-    replies = question.replies().paginate(
+    replies = question.q_replies().paginate(
         page=page, per_page=app.config['QUESTIONS_PER_PAGE'], error_out=False)
     next_url = url_for('q/<id>', page=replies.next_num) \
         if replies.has_next else None
