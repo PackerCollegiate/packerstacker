@@ -49,6 +49,17 @@ class EmptyForm(FlaskForm):
 class QuestionForm(FlaskForm):
     question = TextAreaField('Ask a question', validators=[
         DataRequired(), Length(min=1, max=1000)])
+
+    math = BooleanField('Math')
+    science = BooleanField('Science')
+    history = BooleanField('History')
+    english = BooleanField('English')
+    politics = BooleanField('Current Events')
+    language = BooleanField('Language')
+    arts = BooleanField('Arts')
+    packer = BooleanField('Packer Events')
+
+
     submit = SubmitField('Submit')
 
 class ReplyForm(FlaskForm):

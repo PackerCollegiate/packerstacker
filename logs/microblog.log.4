@@ -1,51 +1,4 @@
-2023-04-05 11:08:03,489 ERROR: Exception on /q/2 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 163, in question_page
-    return render_template("question_page.html", title='Question', form=form, question=question)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 146, in render_template
-    template = app.jinja_env.get_or_select_template(template_name_or_list)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1010, in get_template
-    return self._load_template(name, globals)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 969, in _load_template
-    template = self.loader.load(self, name, self.make_globals(globals))
-  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/loaders.py", line 138, in load
-    code = environment.compile(source, name, filename)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 768, in compile
-    self.handle_exception(source=source_hint)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/question_page.html", line 11, in template
-    {% block app_content %}
-jinja2.exceptions.TemplateAssertionError: block 'app_content' defined twice
-2023-04-05 11:08:17,712 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-05 11:09:23,041 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-05 11:10:22,186 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-05 11:10:33,313 ERROR: Exception on /q/2 [POST] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 160, in question_page
-    reply = Reply(body=form.reply.data, author=current_user, op=question)
-NameError: name 'Reply' is not defined
-2023-04-05 11:11:11,510 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-05 11:13:57,491 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-05 11:14:02,247 ERROR: Exception on /q/2 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+2023-04-08 15:38:52,747 ERROR: Exception on /q/2 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -58,10 +11,15 @@ Traceback (most recent call last):
   File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 165, in question_page
     replies = question.replies().paginate(
 TypeError: 'AppenderQuery' object is not callable
-2023-04-05 11:17:32,660 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-05 11:17:40,069 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-05 11:17:44,711 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-05 11:17:50,944 ERROR: Exception on /q/2 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+2023-04-08 15:41:15,787 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-08 15:41:20,197 ERROR: Exception on /q/2 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1693, in _entity_namespace_key
+    return getattr(ns, key)
+AttributeError: type object 'Question' has no attribute 'post_id'
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -72,10 +30,29 @@ Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
   File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 165, in question_page
-    replies = question.replies().paginate(
-TypeError: 'AppenderQuery' object is not callable
-2023-04-05 11:19:37,404 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-05 11:19:43,290 ERROR: Exception on /q/2 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+    replies = question.q_replies().paginate(
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/models.py", line 72, in q_replies
+    replies = Question.query.filter_by(post_id=self.id)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1793, in filter_by
+    clauses = [
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1794, in <listcomp>
+    _entity_namespace_key(from_entity, key) == value
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1695, in _entity_namespace_key
+    util.raise_(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+sqlalchemy.exc.InvalidRequestError: Entity namespace for "question" has no property "post_id"
+2023-04-08 15:42:20,844 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-08 15:42:25,523 ERROR: Exception on /q/2 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1808, in _execute_context
+    self.dialect.do_execute(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: question.timestamp
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -86,28 +63,39 @@ Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
   File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 165, in question_page
-    replies = question.replies().paginate(
-TypeError: 'AppenderQuery' object is not callable
-2023-04-05 11:21:49,903 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-05 11:22:00,526 ERROR: Exception on /q/2 [POST] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 163, in question_page
-    redirect(url_for('q/<id>'))
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/helpers.py", line 256, in url_for
-    return current_app.url_for(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2031, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2020, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-  File "/Applications/anaconda3/lib/python3.9/site-packages/werkzeug/routing/map.py", line 917, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'q/<id>'. Did you mean 'index' instead?
-2023-04-05 11:22:48,352 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+    replies = question.q_replies().paginate(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_sqlalchemy/query.py", line 99, in paginate
+    return QueryPagination(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_sqlalchemy/pagination.py", line 69, in __init__
+    items = self._query_items()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_sqlalchemy/pagination.py", line 354, in _query_items
+    out = query.limit(self.per_page).offset(self._query_offset).all()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2759, in all
+    return self._iter().all()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2894, in _iter
+    result = self.session.execute(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1692, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1620, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1487, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1851, in _execute_context
+    self._handle_dbapi_exception(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2032, in _handle_dbapi_exception
+    util.raise_(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1808, in _execute_context
+    self.dialect.do_execute(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: question.timestamp
+[SQL: SELECT reply.id AS reply_id, reply.body AS reply_body, reply.timestamp AS reply_timestamp, reply.user_id AS reply_user_id, reply.post_id AS reply_post_id 
+FROM reply 
+WHERE reply.id = ? ORDER BY question.timestamp DESC
+ LIMIT ? OFFSET ?]
+[parameters: (2, 25, 0)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
