@@ -3,4 +3,8 @@ from app.models import User, Question, Reply
 
 @app.shell_context_processor
 def make_shell_context():
+<<<<<<< Updated upstream
     return {'db': db, 'User': User, 'Question': Question, 'Reply': Reply, 'Tag':Tag}
+=======
+    return {'db': db, 'User': User, 'Question': Question, 'Reply': Reply}
+>>>>>>> Stashed changes
