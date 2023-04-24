@@ -1,49 +1,4 @@
-2023-04-08 15:38:52,747 ERROR: Exception on /q/2 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 165, in question_page
-    replies = question.replies().paginate(
-TypeError: 'AppenderQuery' object is not callable
-2023-04-08 15:41:15,787 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-08 15:41:20,197 ERROR: Exception on /q/2 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1693, in _entity_namespace_key
-    return getattr(ns, key)
-AttributeError: type object 'Question' has no attribute 'post_id'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 165, in question_page
-    replies = question.q_replies().paginate(
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/models.py", line 72, in q_replies
-    replies = Question.query.filter_by(post_id=self.id)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1793, in filter_by
-    clauses = [
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1794, in <listcomp>
-    _entity_namespace_key(from_entity, key) == value
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1695, in _entity_namespace_key
-    util.raise_(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
-    raise exception
-sqlalchemy.exc.InvalidRequestError: Entity namespace for "question" has no property "post_id"
-2023-04-08 15:42:20,844 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-08 15:42:25,523 ERROR: Exception on /q/2 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+2023-04-08 15:42:28,501 ERROR: Exception on /q/2 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1808, in _execute_context
     self.dialect.do_execute(
@@ -99,3 +54,64 @@ WHERE reply.id = ? ORDER BY question.timestamp DESC
  LIMIT ? OFFSET ?]
 [parameters: (2, 25, 0)]
 (Background on this error at: https://sqlalche.me/e/14/e3q8)
+2023-04-08 15:44:36,274 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-08 15:44:42,179 ERROR: Exception on /q/2 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 165, in question_page
+    replies = question.q_replies().paginate(
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/models.py", line 73, in q_replies
+    return replies.order_by(replies.timestamp.desc())
+AttributeError: 'Query' object has no attribute 'timestamp'
+2023-04-08 15:44:57,599 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-08 15:45:44,589 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-08 15:49:22,787 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-08 15:49:25,043 ERROR: Exception on /q/3 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 172, in question_page
+    return render_template("question_page.html", title='Question', form=form, question=question,
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/question_page.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
+    {% block body -%}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
+    {% block content -%}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 48, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/question_page.html", line 7, in block 'app_content'
+    {% include '_question_view.html' %}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/_question_view.html", line 5, in template
+    {%if user.type %}<p>&#x2713; Teacher</p>} {%end if%}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'end'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2023-04-08 15:49:51,309 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]

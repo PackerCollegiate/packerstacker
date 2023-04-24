@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length
-from app.models import User, Question, Reply
+from app.models import User, Question, Reply, Tag
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
@@ -49,16 +49,6 @@ class EmptyForm(FlaskForm):
 class QuestionForm(FlaskForm):
     question = TextAreaField('Ask a question', validators=[
         DataRequired(), Length(min=1, max=1000)])
-
-    math = BooleanField('Math')
-    science = BooleanField('Science')
-    history = BooleanField('History')
-    english = BooleanField('English')
-    politics = BooleanField('Current Events')
-    language = BooleanField('Language')
-    arts = BooleanField('Arts')
-    packer = BooleanField('Packer Events')
-
 
     submit = SubmitField('Submit')
 

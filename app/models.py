@@ -10,17 +10,9 @@ followers = db.Table('followers',
     db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
 )
 
-tags = db.Table('tags',
-    db.Column('question_id', db.Integer, db.ForeignKey('question.id')),
-    db.Column('Math', db.Integer),
-    db.Column('Science', db.Integer),
-    db.Column('History', db.Integer),
-    db.Column('English', db.Integer),
-    db.Column('Politics', db.Integer),
-    db.Column('Language', db.Integer),
-    db.Column('Arts', db.Integer),
-    db.Column('Packer', db.Integer)
-)
+class Tag(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(30))
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -76,7 +68,8 @@ class Question(db.Model):
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     replies = db.relationship('Reply', backref='op', lazy='dynamic')
-    tags = db.relationship('tags', backref='op', lazy='dynamic')
+    tag_id = db.Column(db.Integer, db.ForeignKey('tag.id'))
+    tags = db.relationship('Tag', backref='op', lazy=True)
 
     def __repr__(self):
         return '<Question {}>'.format(self.body)
@@ -84,10 +77,6 @@ class Question(db.Model):
     def q_replies(self):
         replies = Reply.query.filter_by(post_id=self.id)
         return replies.order_by(Reply.timestamp.desc())
-
-    def q_tags(self):
-        qtags = tags.query.filter_by(question_id=self.id)
-        return qtags.order_by(tags.column_name)
 
 class Reply(db.Model):
     id = db.Column(db.Integer, primary_key=True)

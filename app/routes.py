@@ -2,7 +2,7 @@ from flask import render_template, flash, redirect, url_for
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, EmptyForm, QuestionForm, ReplyForm
 from flask_login import current_user, login_user
-from app.models import User, Question, Reply
+from app.models import User, Question, Reply, Tag
 from flask_login import logout_user
 from flask_login import login_required
 from flask import request
