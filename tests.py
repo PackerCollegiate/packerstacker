@@ -4,7 +4,7 @@ os.environ['DATABASE_URL'] = 'sqlite://'
 from datetime import datetime, timedelta
 import unittest
 from app import app, db
-from app.models import User, Question
+from app.models import User, Question, Reply#, Tag, Classification
 
 class UserModelCase(unittest.TestCase):
     def setUp(self):

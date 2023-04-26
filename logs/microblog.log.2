@@ -1,12 +1,75 @@
-2023-04-14 13:53:49,078 ERROR: Exception on / [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+2023-04-25 11:20:57,090 ERROR: Exception on / [POST] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/clsregistry.py", line 393, in _resolve_name
-    rval = d[token]
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/_collections.py", line 746, in __missing__
-    self[key] = val = self.creator(key)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/clsregistry.py", line 372, in _access_cls
-    return self.fallback[key]
-KeyError: 'Tag'
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 24, in index
+    question = Question(body=form.question.data, author=current_user,
+  File "<string>", line 4, in __init__
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 480, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 477, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/decl_base.py", line 1157, in _declarative_constructor
+    setattr(self, k, kwargs[k])
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 459, in __set__
+    self.impl.set(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 1268, in set
+    value = self.fire_replace_event(state, dict_, value, old, initiator)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 1294, in fire_replace_event
+    value = fn(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 119, in set_
+    newvalue_state = attributes.instance_state(newvalue)
+AttributeError: 'BaseQuery' object has no attribute '_sa_instance_state'
+2023-04-25 11:23:54,811 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-25 11:23:56,845 ERROR: Exception on / [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 22, in index
+    form = QuestionForm(print(form.data.tags))
+UnboundLocalError: local variable 'form' referenced before assignment
+2023-04-25 11:24:26,585 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-25 11:24:28,551 ERROR: Exception on / [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 23, in index
+    if form.validate_on_submit(print(form.data.tags)):
+AttributeError: 'dict' object has no attribute 'tags'
+2023-04-25 11:24:49,215 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-25 11:24:54,558 ERROR: Exception on / [POST] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1693, in _entity_namespace_key
+    return getattr(ns, key)
+AttributeError: type object 'Tag' has no attribute 'tag_name'
 
 The above exception was the direct cause of the following exception:
 
@@ -15,119 +78,52 @@ Traceback (most recent call last):
     response = self.full_dispatch_request()
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1818, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2309, in preprocess_request
-    rv = self.ensure_sync(before_func)()
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 14, in before_request
-    if current_user.is_authenticated:
-  File "/Applications/anaconda3/lib/python3.9/site-packages/werkzeug/local.py", line 316, in __get__
-    obj = instance._get_current_object()  # type: ignore[misc]
-  File "/Applications/anaconda3/lib/python3.9/site-packages/werkzeug/local.py", line 520, in _get_current_object
-    return get_name(local())  # type: ignore
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 25, in <lambda>
-    current_user = LocalProxy(lambda: _get_user())
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 372, in _get_user
-    current_app.login_manager._load_user()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/login_manager.py", line 364, in _load_user
-    user = self._user_callback(user_id)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/models.py", line 104, in load_user
-    return User.query.get(int(id))
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_sqlalchemy/model.py", line 30, in __get__
-    return cls.query_class(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 180, in __init__
-    self._set_entities(entities)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 187, in _set_entities
-    self._raw_columns = [
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 188, in <listcomp>
-    coercions.expect(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 181, in expect
-    insp._post_inspect
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 1180, in __get__
-    obj.__dict__[self.__name__] = result = self.fget(obj)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 2123, in _post_inspect
-    self._check_configure()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1900, in _check_configure
-    _configure_registries({self.registry}, cascade=True)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3418, in _configure_registries
-    _do_configure_registries(registries, cascade)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3457, in _do_configure_registries
-    mapper._post_configure_properties()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1917, in _post_configure_properties
-    prop.init()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/interfaces.py", line 231, in init
-    self.do_init()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2150, in do_init
-    self._process_dependent_arguments()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2245, in _process_dependent_arguments
-    self.target = self.entity.persist_selectable
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 1113, in __get__
-    obj.__dict__[self.__name__] = result = self.fget(obj)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2112, in entity
-    argument = self._clsregistry_resolve_name(self.argument)()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/clsregistry.py", line 397, in _resolve_name
-    self._raise_for_name(name, err)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/clsregistry.py", line 375, in _raise_for_name
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 25, in index
+    tags=Tag.query.filter_by(tag_name=form.tags.data))
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1793, in filter_by
+    clauses = [
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1794, in <listcomp>
+    _entity_namespace_key(from_entity, key) == value
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1695, in _entity_namespace_key
     util.raise_(
   File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
     raise exception
-sqlalchemy.exc.InvalidRequestError: When initializing mapper mapped class Question->question, expression 'Tag' failed to locate a name ('Tag'). If this is a class name, consider adding this relationship() to the <class 'app.models.Question'> class after both dependent classes have been defined.
-2023-04-14 13:55:34,971 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-14 13:55:37,080 ERROR: Exception on / [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+sqlalchemy.exc.InvalidRequestError: Entity namespace for "tag" has no property "tag_name"
+2023-04-26 13:08:52,432 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 13:09:01,122 ERROR: Exception on / [POST] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1693, in _entity_namespace_key
+    return getattr(ns, key)
+AttributeError: type object 'Tag' has no attribute 'tag_name'
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1818, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2309, in preprocess_request
-    rv = self.ensure_sync(before_func)()
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 14, in before_request
-    if current_user.is_authenticated:
-  File "/Applications/anaconda3/lib/python3.9/site-packages/werkzeug/local.py", line 316, in __get__
-    obj = instance._get_current_object()  # type: ignore[misc]
-  File "/Applications/anaconda3/lib/python3.9/site-packages/werkzeug/local.py", line 520, in _get_current_object
-    return get_name(local())  # type: ignore
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 25, in <lambda>
-    current_user = LocalProxy(lambda: _get_user())
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 372, in _get_user
-    current_app.login_manager._load_user()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/login_manager.py", line 364, in _load_user
-    user = self._user_callback(user_id)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/models.py", line 104, in load_user
-    return User.query.get(int(id))
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_sqlalchemy/model.py", line 30, in __get__
-    return cls.query_class(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 180, in __init__
-    self._set_entities(entities)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 187, in _set_entities
-    self._raw_columns = [
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 188, in <listcomp>
-    coercions.expect(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 181, in expect
-    insp._post_inspect
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 1180, in __get__
-    obj.__dict__[self.__name__] = result = self.fget(obj)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 2123, in _post_inspect
-    self._check_configure()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1900, in _check_configure
-    _configure_registries({self.registry}, cascade=True)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3418, in _configure_registries
-    _do_configure_registries(registries, cascade)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3457, in _do_configure_registries
-    mapper._post_configure_properties()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1917, in _post_configure_properties
-    prop.init()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/interfaces.py", line 231, in init
-    self.do_init()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2150, in do_init
-    self._process_dependent_arguments()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2245, in _process_dependent_arguments
-    self.target = self.entity.persist_selectable
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 1113, in __get__
-    obj.__dict__[self.__name__] = result = self.fget(obj)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2132, in entity
-    raise sa_exc.ArgumentError(
-sqlalchemy.exc.ArgumentError: relationship 'tags' expects a class or a mapper argument (received: <class 'flask_sqlalchemy.extension.SQLAlchemy._make_table_class.<locals>.Table'>)
-2023-04-14 13:56:21,406 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 25, in index
+    tags=Tag.query.filter_by(tag_name=form.tags.data))
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1793, in filter_by
+    clauses = [
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1794, in <listcomp>
+    _entity_namespace_key(from_entity, key) == value
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1695, in _entity_namespace_key
+    util.raise_(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+sqlalchemy.exc.InvalidRequestError: Entity namespace for "tag" has no property "tag_name"
+2023-04-26 13:10:37,690 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]

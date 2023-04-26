@@ -1,74 +1,45 @@
-2023-04-24 08:46:44,177 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 08:47:05,051 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 08:47:39,630 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 08:47:53,916 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 08:47:59,855 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 08:56:19,331 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 09:04:42,049 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 09:04:53,612 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 09:05:07,867 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 09:05:19,527 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 09:06:45,223 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 09:06:49,561 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 09:06:56,710 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 09:09:30,535 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 09:17:39,224 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 09:20:22,083 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 09:20:30,789 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 09:20:35,702 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 09:20:50,636 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 09:21:01,233 ERROR: Exception on / [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+2023-04-26 14:12:59,873 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:13:04,538 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:13:08,599 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:13:28,654 ERROR: Exception on /index [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1818, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2309, in preprocess_request
-    rv = self.ensure_sync(before_func)()
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 14, in before_request
-    if current_user.is_authenticated:
-  File "/Applications/anaconda3/lib/python3.9/site-packages/werkzeug/local.py", line 316, in __get__
-    obj = instance._get_current_object()  # type: ignore[misc]
-  File "/Applications/anaconda3/lib/python3.9/site-packages/werkzeug/local.py", line 520, in _get_current_object
-    return get_name(local())  # type: ignore
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 25, in <lambda>
-    current_user = LocalProxy(lambda: _get_user())
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 372, in _get_user
-    current_app.login_manager._load_user()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/login_manager.py", line 364, in _load_user
-    user = self._user_callback(user_id)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/models.py", line 93, in load_user
-    return User.query.get(int(id))
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_sqlalchemy/model.py", line 30, in __get__
-    return cls.query_class(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 180, in __init__
-    self._set_entities(entities)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 187, in _set_entities
-    self._raw_columns = [
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 188, in <listcomp>
-    coercions.expect(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 181, in expect
-    insp._post_inspect
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 1180, in __get__
-    obj.__dict__[self.__name__] = result = self.fget(obj)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 2123, in _post_inspect
-    self._check_configure()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1900, in _check_configure
-    _configure_registries({self.registry}, cascade=True)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3418, in _configure_registries
-    _do_configure_registries(registries, cascade)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3457, in _do_configure_registries
-    mapper._post_configure_properties()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1920, in _post_configure_properties
-    prop.post_instrument_class(self)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/interfaces.py", line 678, in post_instrument_class
-    self.strategy.init_class_attribute(mapper)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/dynamic.py", line 36, in init_class_attribute
-    raise exc.InvalidRequestError(
-sqlalchemy.exc.InvalidRequestError: On relationship Question.tags, 'dynamic' loaders cannot be used with many-to-one/one-to-one relationships and/or uselist=False.
-2023-04-24 09:22:06,520 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 09:22:11,370 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 09:22:13,974 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-24 09:25:32,319 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 23, in index
+    if form.validate_on_submit(print(form.tags.data)):
+AttributeError: 'QuestionForm' object has no attribute 'tags'
+2023-04-26 14:13:56,902 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:15:45,169 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:19:45,568 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:20:18,855 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:20:24,187 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:20:34,111 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:21:31,735 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:21:36,588 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:23:26,910 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:25:15,025 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:25:19,863 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:25:27,498 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:25:50,417 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:27:06,687 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:27:12,189 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:27:15,099 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:27:19,318 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:29:30,421 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:30:40,869 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:32:18,046 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:33:35,679 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:35:33,715 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:35:58,425 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:36:30,393 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:36:56,185 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:39:02,536 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:39:54,461 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]

@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField, RadioField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length
 from app.models import User, Question, Reply, Tag
 
@@ -49,6 +49,12 @@ class EmptyForm(FlaskForm):
 class QuestionForm(FlaskForm):
     question = TextAreaField('Ask a question', validators=[
         DataRequired(), Length(min=1, max=1000)])
+
+    tag_names = Tag.query.all()
+    names = []
+    for tag in tag_names:
+        names.append(tag.name)
+    tags = RadioField('Tags', choices = names)
 
     submit = SubmitField('Submit')
 

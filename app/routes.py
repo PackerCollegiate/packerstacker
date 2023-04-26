@@ -2,7 +2,7 @@ from flask import render_template, flash, redirect, url_for
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, EmptyForm, QuestionForm, ReplyForm
 from flask_login import current_user, login_user
-from app.models import User, Question, Reply, Tag
+from app.models import User, Question, Reply, Tag#, Classification
 from flask_login import logout_user
 from flask_login import login_required
 from flask import request
@@ -21,7 +21,8 @@ def before_request():
 def index():
     form = QuestionForm()
     if form.validate_on_submit():
-        question = Question(body=form.question.data, author=current_user)
+        question = Question(body=form.question.data, author=current_user,
+            tags=Tag.query.filter_by(name=form.tags.data))
         db.session.add(question)
         db.session.commit()
         flash('Your question is now live!')
