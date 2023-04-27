@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import logging
 import sys
 import typing as t
@@ -6,7 +8,7 @@ from werkzeug.local import LocalProxy
 
 from .globals import request
 
-if t.TYPE_CHECKING:
+if t.TYPE_CHECKING:  # pragma: no cover
     from .app import Flask
 
 
@@ -50,7 +52,7 @@ default_handler.setFormatter(
 )
 
 
-def create_logger(app: "Flask") -> logging.Logger:
+def create_logger(app: Flask) -> logging.Logger:
     """Get the Flask app's logger and configure it if needed.
 
     The logger name will be the same as
