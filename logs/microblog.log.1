@@ -1,77 +1,100 @@
-2023-04-26 14:12:59,873 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:13:04,538 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:13:08,599 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:13:28,654 ERROR: Exception on /index [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+2023-04-27 15:00:45,951 ERROR: Exception on /favicon.ico [GET] [in /Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask/app.py:1414]
 Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
     response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 23, in index
-    if form.validate_on_submit(print(form.tags.data)):
-AttributeError: 'QuestionForm' object has no attribute 'tags'
-2023-04-26 14:13:56,902 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:15:45,169 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:19:45,568 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:20:18,855 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:20:24,187 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:20:34,111 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:21:31,735 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:21:36,588 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:23:26,910 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:25:15,025 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:25:19,863 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:25:27,498 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:25:50,417 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:27:06,687 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:27:12,189 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:27:15,099 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:27:19,318 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:29:30,421 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:30:40,869 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:32:18,046 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:33:35,679 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:35:33,715 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:35:58,425 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:36:30,393 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:36:56,185 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:39:02,536 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 14:39:54,461 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 20:56:06,139 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 20:56:16,268 ERROR: Exception on / [POST] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask/app.py", line 1482, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask/app.py", line 1974, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "/Users/gbenedisgrab/Code/packerstacker/app/routes.py", line 14, in before_request
+    if current_user.is_authenticated:
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/werkzeug/local.py", line 515, in _get_current_object
+    return get_name(local())  # type: ignore
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask_login/utils.py", line 25, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask_login/utils.py", line 372, in _get_user
+    current_app.login_manager._load_user()
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask_login/login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+  File "/Users/gbenedisgrab/Code/packerstacker/app/models.py", line 98, in load_user
+    return User.query.get(int(id))
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask_sqlalchemy/model.py", line 30, in __get__
+    return cls.query_class(
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 273, in __init__
+    self._set_entities(entities)
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 282, in _set_entities
+    self._raw_columns = [
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 283, in <listcomp>
+    coercions.expect(
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/sql/coercions.py", line 406, in expect
+    insp._post_inspect
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 1257, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 2681, in _post_inspect
+    self._check_configure()
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 2362, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 4177, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 4215, in _do_configure_registries
+    raise e
+sqlalchemy.exc.InvalidRequestError: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'Mapper[Question(question)]'. Original exception was: Error creating backref 'questions' on relationship 'Question.tags': property of that name exists on mapper 'Mapper[Tag(tag)]'
+2023-04-27 15:01:00,742 INFO: Microblog startup [in /Users/gbenedisgrab/Code/packerstacker/app/__init__.py:46]
+2023-04-27 15:02:45,904 INFO: Microblog startup [in /Users/gbenedisgrab/Code/packerstacker/app/__init__.py:46]
+2023-04-27 15:02:50,707 ERROR: Exception on / [GET] [in /Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask/app.py:1414]
 Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
     response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 24, in index
-    question = Question(body=form.question.data, author=current_user,
-  File "<string>", line 4, in __init__
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 480, in _initialize_instance
-    manager.dispatch.init_failure(self, args, kwargs)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
-    compat.raise_(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
-    raise exception
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 477, in _initialize_instance
-    return manager.original_init(*mixed[1:], **kwargs)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/decl_base.py", line 1157, in _declarative_constructor
-    setattr(self, k, kwargs[k])
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 459, in __set__
-    self.impl.set(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 1563, in set
-    raise TypeError(
-TypeError: Incompatible collection type: BaseQuery is not list-like
-2023-04-26 21:04:07,044 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask/app.py", line 1482, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask/app.py", line 1974, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "/Users/gbenedisgrab/Code/packerstacker/app/routes.py", line 14, in before_request
+    if current_user.is_authenticated:
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/werkzeug/local.py", line 515, in _get_current_object
+    return get_name(local())  # type: ignore
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask_login/utils.py", line 25, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask_login/utils.py", line 372, in _get_user
+    current_app.login_manager._load_user()
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask_login/login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+  File "/Users/gbenedisgrab/Code/packerstacker/app/models.py", line 98, in load_user
+    return User.query.get(int(id))
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask_sqlalchemy/model.py", line 30, in __get__
+    return cls.query_class(
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 273, in __init__
+    self._set_entities(entities)
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 282, in _set_entities
+    self._raw_columns = [
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 283, in <listcomp>
+    coercions.expect(
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/sql/coercions.py", line 406, in expect
+    insp._post_inspect
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 1257, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 2681, in _post_inspect
+    self._check_configure()
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 2362, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 4177, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 4219, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 2379, in _post_configure_properties
+    prop.init()
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/interfaces.py", line 549, in init
+    self.do_init()
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/relationships.py", line 1637, in do_init
+    self._generate_backref()
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/relationships.py", line 2070, in _generate_backref
+    raise sa_exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Error creating backref 'questions' on relationship 'Question.tags': property of that name exists on mapper 'Mapper[Tag(tag)]'

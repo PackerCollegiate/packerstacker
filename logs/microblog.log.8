@@ -1,9 +1,12 @@
-2023-04-08 15:49:53,074 ERROR: Exception on /q/3 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+2023-04-14 13:56:28,482 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-14 13:56:31,832 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-14 13:56:33,578 ERROR: Exception on / [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
     rv = self.handle_user_exception(e)
+<<<<<<< Updated upstream
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
     rv = self.dispatch_request()
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
@@ -95,7 +98,59 @@ jinja2.exceptions.UndefinedError: 'user' is undefined
 2023-04-08 16:56:42,408 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
 2023-04-10 11:28:45,626 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
 2023-04-10 11:34:18,240 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
-2023-04-10 11:38:55,492 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-12 10:46:21,091 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-14 13:16:34,756 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-14 13:53:44,362 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-13 11:15:49,379 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
+2023-04-13 11:17:25,083 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
+2023-04-13 11:18:42,411 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
+=======
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1818, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2309, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 14, in before_request
+    if current_user.is_authenticated:
+  File "/Applications/anaconda3/lib/python3.9/site-packages/werkzeug/local.py", line 316, in __get__
+    obj = instance._get_current_object()  # type: ignore[misc]
+  File "/Applications/anaconda3/lib/python3.9/site-packages/werkzeug/local.py", line 520, in _get_current_object
+    return get_name(local())  # type: ignore
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 25, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 372, in _get_user
+    current_app.login_manager._load_user()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/models.py", line 104, in load_user
+    return User.query.get(int(id))
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_sqlalchemy/model.py", line 30, in __get__
+    return cls.query_class(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 180, in __init__
+    self._set_entities(entities)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 187, in _set_entities
+    self._raw_columns = [
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 188, in <listcomp>
+    coercions.expect(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/coercions.py", line 181, in expect
+    insp._post_inspect
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 1180, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 2123, in _post_inspect
+    self._check_configure()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1900, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3418, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3457, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1917, in _post_configure_properties
+    prop.init()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/interfaces.py", line 231, in init
+    self.do_init()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2150, in do_init
+    self._process_dependent_arguments()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2245, in _process_dependent_arguments
+    self.target = self.entity.persist_selectable
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 1113, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2132, in entity
+    raise sa_exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: relationship 'tags' expects a class or a mapper argument (received: <class 'flask_sqlalchemy.extension.SQLAlchemy._make_table_class.<locals>.Table'>)
+>>>>>>> Stashed changes

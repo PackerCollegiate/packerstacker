@@ -31,7 +31,7 @@ def index():
                 tag = Tag(name=name.strip())
                 db.session.add(tag)
             question.tags.append(tag)
-
+        print([tag.name for tag in Tag.query.all()])
         db.session.commit()
         flash('Your question is now live!')
         return redirect(url_for('index'))

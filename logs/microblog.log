@@ -1,68 +1,49 @@
-2023-04-26 21:04:17,049 ERROR: Exception on / [POST] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+2023-04-27 15:02:50,784 ERROR: Exception on /favicon.ico [GET] [in /Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask/app.py:1414]
 Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1808, in _execute_context
-    self.dialect.do_execute(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.OperationalError: no such table: question_tag
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
     response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 33, in index
-    question.tags.append(tag)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 481, in __get__
-    return self.impl.get(state, dict_)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 941, in get
-    value = self._fire_loader_callables(state, key, passive)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 977, in _fire_loader_callables
-    return self.callable_(state, passive)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/strategies.py", line 911, in _load_for_state
-    return self._emit_lazyload(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/strategies.py", line 1047, in _emit_lazyload
-    result = session.execute(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1692, in execute
-    result = conn._execute_20(statement, params or {}, execution_options)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1620, in _execute_20
-    return meth(self, args_10style, kwargs_10style, execution_options)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
-    return connection._execute_clauseelement(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1487, in _execute_clauseelement
-    ret = self._execute_context(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1851, in _execute_context
-    self._handle_dbapi_exception(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2032, in _handle_dbapi_exception
-    util.raise_(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
-    raise exception
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1808, in _execute_context
-    self.dialect.do_execute(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: question_tag
-[SQL: SELECT tag.id AS tag_id, tag.name AS tag_name 
-FROM tag, question_tag 
-WHERE ? = question_tag.question_id AND tag.id = question_tag.tag_id]
-[parameters: (2,)]
-(Background on this error at: https://sqlalche.me/e/14/e3q8)
-2023-04-26 21:05:09,185 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 21:05:14,413 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 21:06:29,725 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 21:07:58,931 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 21:08:25,392 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 21:08:42,004 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 21:08:46,124 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 21:08:55,769 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 21:12:54,189 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 21:13:28,211 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-27 14:07:36,846 INFO: Microblog startup [in /Users/gbenedisgrab/Code/packerstacker/app/__init__.py:46]
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask/app.py", line 1482, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask/app.py", line 1974, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "/Users/gbenedisgrab/Code/packerstacker/app/routes.py", line 14, in before_request
+    if current_user.is_authenticated:
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/werkzeug/local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/werkzeug/local.py", line 515, in _get_current_object
+    return get_name(local())  # type: ignore
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask_login/utils.py", line 25, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask_login/utils.py", line 372, in _get_user
+    current_app.login_manager._load_user()
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask_login/login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+  File "/Users/gbenedisgrab/Code/packerstacker/app/models.py", line 98, in load_user
+    return User.query.get(int(id))
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/flask_sqlalchemy/model.py", line 30, in __get__
+    return cls.query_class(
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 273, in __init__
+    self._set_entities(entities)
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 282, in _set_entities
+    self._raw_columns = [
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/query.py", line 283, in <listcomp>
+    coercions.expect(
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/sql/coercions.py", line 406, in expect
+    insp._post_inspect
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 1257, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 2681, in _post_inspect
+    self._check_configure()
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 2362, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 4177, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/Users/gbenedisgrab/Code/packerstacker/venv/lib/python3.10/site-packages/sqlalchemy/orm/mapper.py", line 4215, in _do_configure_registries
+    raise e
+sqlalchemy.exc.InvalidRequestError: One or more mappers failed to initialize - can't proceed with initialization of other mappers. Triggering mapper: 'Mapper[Question(question)]'. Original exception was: Error creating backref 'questions' on relationship 'Question.tags': property of that name exists on mapper 'Mapper[Tag(tag)]'
+2023-04-27 15:03:24,638 INFO: Microblog startup [in /Users/gbenedisgrab/Code/packerstacker/app/__init__.py:46]
+2023-04-27 15:03:29,350 INFO: Microblog startup [in /Users/gbenedisgrab/Code/packerstacker/app/__init__.py:46]
+2023-04-27 15:06:43,680 INFO: Microblog startup [in /Users/gbenedisgrab/Code/packerstacker/app/__init__.py:46]
+2023-04-27 15:09:56,620 INFO: Microblog startup [in /Users/gbenedisgrab/Code/packerstacker/app/__init__.py:46]
