@@ -64,6 +64,7 @@ class Question(db.Model):
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     replies = db.relationship('Reply', backref='op', lazy='dynamic')
+    tags = db.relationship('Tag', secondary='question_tag', backref=db.backref('questions', lazy=True))
 
     def __repr__(self):
         return '<Question {}>'.format(self.body)
@@ -85,7 +86,7 @@ class Reply(db.Model):
 class Tag(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30), unique=True)
-    questions = db.relationship('Question', secondary='question_tag', backref='tags')
+    questions = db.relationship('Question', secondary='question_tags', backref=db.backref('tags', lazy=True))
 
 question_tag = db.Table('question_tag',
     db.Column('question_id', db.Integer, db.ForeignKey('question.id')),
