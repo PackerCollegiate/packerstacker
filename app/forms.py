@@ -49,12 +49,7 @@ class EmptyForm(FlaskForm):
 class QuestionForm(FlaskForm):
     question = TextAreaField('Ask a question', validators=[
         DataRequired(), Length(min=1, max=1000)])
-
-    tag_names = Tag.query.all()
-    names = []
-    for tag in tag_names:
-        names.append(tag.name)
-    tags = RadioField('Tags', choices = names)
+    tags = StringField('Tags')
 
     submit = SubmitField('Submit')
 

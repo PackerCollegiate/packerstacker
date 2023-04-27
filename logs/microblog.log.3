@@ -1,99 +1,4 @@
-2023-04-25 11:09:48,365 ERROR: Exception on / [POST] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1693, in _entity_namespace_key
-    return getattr(ns, key)
-AttributeError: type object 'Tag' has no attribute 'tag_name'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 24, in index
-    question = Question(body=form.question.data, author=current_user, tags=Tag.query.filter_by(tag_name=form.tags.data))
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1793, in filter_by
-    clauses = [
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1794, in <listcomp>
-    _entity_namespace_key(from_entity, key) == value
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1695, in _entity_namespace_key
-    util.raise_(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
-    raise exception
-sqlalchemy.exc.InvalidRequestError: Entity namespace for "tag" has no property "tag_name"
-2023-04-25 11:13:11,298 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-25 11:13:28,167 ERROR: Exception on / [POST] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 25, in index
-    tags=Tag.query.filter(tag_name=form.tags.data))
-TypeError: filter() got an unexpected keyword argument 'tag_name'
-2023-04-25 11:15:10,010 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-25 11:15:19,515 ERROR: Exception on / [POST] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 25, in index
-    tags=Tag.query.filter(tag.name==form.tags.data))
-NameError: name 'tag' is not defined
-2023-04-25 11:15:36,902 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-25 11:15:41,651 ERROR: Exception on / [POST] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 25, in index
-    tags=Tag.query.filter(tag_name==form.tags.data))
-NameError: name 'tag_name' is not defined
-2023-04-25 11:17:57,268 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-25 11:18:04,132 ERROR: Exception on / [POST] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 25, in index
-    tags=Tag.query.join(Tag, (tag_name==form.tags.data)))
-NameError: name 'tag_name' is not defined
-2023-04-25 11:19:32,860 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-25 11:19:38,954 ERROR: Exception on / [POST] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+2023-04-25 11:20:57,090 ERROR: Exception on / [POST] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -127,4 +32,98 @@ Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 119, in set_
     newvalue_state = attributes.instance_state(newvalue)
 AttributeError: 'BaseQuery' object has no attribute '_sa_instance_state'
-2023-04-25 11:20:51,209 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-25 11:23:54,811 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-25 11:23:56,845 ERROR: Exception on / [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 22, in index
+    form = QuestionForm(print(form.data.tags))
+UnboundLocalError: local variable 'form' referenced before assignment
+2023-04-25 11:24:26,585 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-25 11:24:28,551 ERROR: Exception on / [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 23, in index
+    if form.validate_on_submit(print(form.data.tags)):
+AttributeError: 'dict' object has no attribute 'tags'
+2023-04-25 11:24:49,215 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-25 11:24:54,558 ERROR: Exception on / [POST] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1693, in _entity_namespace_key
+    return getattr(ns, key)
+AttributeError: type object 'Tag' has no attribute 'tag_name'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 25, in index
+    tags=Tag.query.filter_by(tag_name=form.tags.data))
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1793, in filter_by
+    clauses = [
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1794, in <listcomp>
+    _entity_namespace_key(from_entity, key) == value
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1695, in _entity_namespace_key
+    util.raise_(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+sqlalchemy.exc.InvalidRequestError: Entity namespace for "tag" has no property "tag_name"
+2023-04-26 13:08:52,432 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 13:09:01,122 ERROR: Exception on / [POST] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1693, in _entity_namespace_key
+    return getattr(ns, key)
+AttributeError: type object 'Tag' has no attribute 'tag_name'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 25, in index
+    tags=Tag.query.filter_by(tag_name=form.tags.data))
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1793, in filter_by
+    clauses = [
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1794, in <listcomp>
+    _entity_namespace_key(from_entity, key) == value
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1695, in _entity_namespace_key
+    util.raise_(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+sqlalchemy.exc.InvalidRequestError: Entity namespace for "tag" has no property "tag_name"
+2023-04-26 13:10:37,690 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]

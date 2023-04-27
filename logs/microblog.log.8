@@ -1,79 +1,4 @@
-2023-04-08 15:42:28,501 ERROR: Exception on /q/2 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1808, in _execute_context
-    self.dialect.do_execute(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.OperationalError: no such column: question.timestamp
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 165, in question_page
-    replies = question.q_replies().paginate(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_sqlalchemy/query.py", line 99, in paginate
-    return QueryPagination(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_sqlalchemy/pagination.py", line 69, in __init__
-    items = self._query_items()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_sqlalchemy/pagination.py", line 354, in _query_items
-    out = query.limit(self.per_page).offset(self._query_offset).all()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2759, in all
-    return self._iter().all()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2894, in _iter
-    result = self.session.execute(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1692, in execute
-    result = conn._execute_20(statement, params or {}, execution_options)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1620, in _execute_20
-    return meth(self, args_10style, kwargs_10style, execution_options)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
-    return connection._execute_clauseelement(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1487, in _execute_clauseelement
-    ret = self._execute_context(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1851, in _execute_context
-    self._handle_dbapi_exception(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2032, in _handle_dbapi_exception
-    util.raise_(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
-    raise exception
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1808, in _execute_context
-    self.dialect.do_execute(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: question.timestamp
-[SQL: SELECT reply.id AS reply_id, reply.body AS reply_body, reply.timestamp AS reply_timestamp, reply.user_id AS reply_user_id, reply.post_id AS reply_post_id 
-FROM reply 
-WHERE reply.id = ? ORDER BY question.timestamp DESC
- LIMIT ? OFFSET ?]
-[parameters: (2, 25, 0)]
-(Background on this error at: https://sqlalche.me/e/14/e3q8)
-2023-04-08 15:44:36,274 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-08 15:44:42,179 ERROR: Exception on /q/2 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 165, in question_page
-    replies = question.q_replies().paginate(
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/models.py", line 73, in q_replies
-    return replies.order_by(replies.timestamp.desc())
-AttributeError: 'Query' object has no attribute 'timestamp'
-2023-04-08 15:44:57,599 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-08 15:45:44,589 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-08 15:49:22,787 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-08 15:49:25,043 ERROR: Exception on /q/3 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+2023-04-08 15:49:53,074 ERROR: Exception on /q/3 [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -109,9 +34,68 @@ Traceback (most recent call last):
     {% block app_content %}{% endblock %}
   File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/question_page.html", line 7, in block 'app_content'
     {% include '_question_view.html' %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/_question_view.html", line 5, in top-level template code
+    {%if user.type %}<p>&#x2713; Teacher</p>} {%endif%}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'user' is undefined
+2023-04-08 15:49:56,386 ERROR: Exception on / [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 36, in index
+    return render_template('index.html', title='Home', form=form,
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
   File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/_question_view.html", line 5, in template
-    {%if user.type %}<p>&#x2713; Teacher</p>} {%end if%}
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'end'. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
-2023-04-08 15:49:51,309 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
+    {% block body -%}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
+    {% block content -%}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 48, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/index.html", line 11, in block 'app_content'
+    {% include '_question.html' %}
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/_question.html", line 6, in top-level template code
+    {%if user.type %}<p>&#x2713; Teacher</p>} {%endif%}
+  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'user' is undefined
+2023-04-08 15:50:32,751 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-08 15:51:25,927 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-08 15:52:27,088 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-08 15:53:18,393 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-08 15:54:17,509 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-08 15:54:59,462 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-08 15:55:31,941 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-08 15:59:00,272 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-08 16:02:02,843 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-08 16:05:51,610 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-08 16:56:42,408 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-10 11:28:45,626 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-10 11:34:18,240 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
+2023-04-10 11:38:55,492 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-12 10:46:21,091 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-14 13:16:34,756 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-14 13:53:44,362 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]

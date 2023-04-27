@@ -21,9 +21,17 @@ def before_request():
 def index():
     form = QuestionForm()
     if form.validate_on_submit():
-        question = Question(body=form.question.data, author=current_user,
-            tags=Tag.query.filter_by(name=form.tags.data))
+        question = Question(body=form.question.data, author=current_user)
         db.session.add(question)
+
+        tag_names = form.tags.data.split(',')
+        for name in tag_names:
+            tag = Tag.query.filter_by(name=name.strip()).first()
+            if not tag:
+                tag = Tag(name=name.strip())
+                db.session.add(tag)
+            question.tags.append(tag)
+
         db.session.commit()
         flash('Your question is now live!')
         return redirect(url_for('index'))

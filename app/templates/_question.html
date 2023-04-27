@@ -12,6 +12,8 @@
               <a style="text-decoration: none" href="{{ url_for('question_page', id=question.id) }}">
                 {{ question.body }}
               </a>
+              <br>
+              <p>Tags: {% for tag in question.tags %}{{ tag.name }}{% if not loop.last %}, {% endif %}{% endfor %}</p>
           </td>
       </tr>
 </table>
