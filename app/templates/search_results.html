@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content %}
+  <h1>Search Results</h1>
+  <p>Found {{ questions|length }} questions:</p>
+  <ul>
+    {% for question in questions %}
+      <li>
+        <h2>{{ question.body }}</h2>
+        <p>Tags: {{ question.tags|join(', ') }}</p>
+        <p>Posted by User {{ question.user_id }} at {{ question.timestamp }}</p>
+        <ul>
+          {% for reply in question.q_replies() %}
+            <li>
+              <p>{{ reply.body }}</p>
+              <p>Posted by User {{ reply.user_id }} at {{ reply.timestamp }}</p>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -2,12 +2,13 @@ from flask import render_template, flash, redirect, url_for
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, EmptyForm, QuestionForm, ReplyForm
 from flask_login import current_user, login_user
-from app.models import User, Question, Reply, Tag#, Classification
+from app.models import User, Question, Reply, Tag
 from flask_login import logout_user
 from flask_login import login_required
 from flask import request
 from werkzeug.urls import url_parse
 from datetime import datetime
+from sqlalchemy import or_
 
 @app.before_request
 def before_request():
@@ -153,12 +154,13 @@ def unfollow(username):
 @app.route('/explore')
 def explore():
     page = request.args.get('page', 1, type=int)
+    tags = Tag.query.all()
     questions = Question.query.order_by(Question.timestamp.desc()).paginate(page=page, per_page=app.config['QUESTIONS_PER_PAGE'], error_out=False)
     next_url = url_for('explore', page=questions.next_num) \
         if questions.has_next else None
     prev_url = url_for('explore', page=questions.prev_num) \
         if questions.has_prev else None
-    return render_template("index.html", title='Explore', questions=questions.items,next_url=next_url, prev_url=prev_url)
+    return render_template("explore.html", title='Explore', tags=tags, questions=questions.items,next_url=next_url, prev_url=prev_url)
 
 @app.route('/q/<id>', methods=['GET', 'POST'])
 def question_page(id):
@@ -180,3 +182,34 @@ def question_page(id):
         if replies.has_prev else None
     return render_template("question_page.html", title='Question', form=form, question=question,
         replies=replies.items, next_url=next_url, prev_url=prev_url)
+
+@app.route('/tag/<id>')
+def tag_page(id):
+    tag = Tag.query.filter_by(id=id).first_or_404()
+    page = request.args.get('page', 1, type=int)
+    questions = tag.tag_questions().paginate(
+        page=page, per_page=app.config['QUESTIONS_PER_PAGE'], error_out=False)
+    next_url = url_for('tag/<id>', tag=tag.id, page=questions.next_num) \
+        if questions.has_next else None
+    prev_url = url_for('tag/<id>', tag=tag.id, page=questions.prev_num) \
+        if questions.has_prev else None
+    form = EmptyForm()
+    return render_template('tag_page.html', tag=tag.name, questions=questions.items,
+                           next_url=next_url, prev_url=prev_url, form=form)
+
+
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    search_terms = request.form['search'].split( )
+    name = search_terms[0]
+    tag = Tag.query.filter_by(name=name).first_or_404()
+    page = request.args.get('page', 1, type=int)
+    questions = tag.tag_questions().paginate(
+        page=page, per_page=app.config['QUESTIONS_PER_PAGE'], error_out=False)
+    next_url = url_for('search', tag = tag, page=questions.next_num) \
+        if questions.has_next else None
+    prev_url = url_for('tag/<id>', tag=tag, page=questions.prev_num) \
+        if questions.has_prev else None
+    form = EmptyForm()
+    return render_template('search_results.html', tag=tag, questions=questions.items,
+                           next_url=next_url, prev_url=prev_url, form=form)

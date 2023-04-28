@@ -21,6 +21,10 @@
                         <li><a href="{{ url_for('index') }}">Home</a></li>
                         <li><a href="{{ url_for('explore') }}">Explore</a></li>
                     </ul>
+                    <form action="{{ url_for('search') }}" method="POST">
+			                   <input type="text" name="query" placeholder="Search">
+			                    <button type="submit">Go</button>
+		                </form>
                     <ul class="nav navbar-nav navbar-right">
                         {% if current_user.is_anonymous %}
                         <li><a href="{{ url_for('login') }}">Login</a></li>

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <h1>Hi, {{ current_user.username }}!</h1>
+    <p> Explore by tag:
+    {% for tag in tags %}
+      <a href="{{ url_for('tag_page', id=tag.id) }}">
+        {{ tag.name }}{% if not loop.last %}, {% endif %}{% endfor %} </a> </p>
+    <br>
+    <p> All questions: </p>
+    {% for question in questions %}
+        {% include '_question.html' %}
+    {% endfor %}
+    <nav aria-label="...">
+        <ul class="pager">
+            <li class="previous{% if not prev_url %} disabled{% endif %}">
+                <a href="{{ prev_url or '#' }}">
+                    <span aria-hidden="true">&larr;</span> Newer questions
+                </a>
+            </li>
+            <li class="next{% if not next_url %} disabled{% endif %}">
+                <a href="{{ next_url or '#' }}">
+                    Older questions <span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+{% endblock %}

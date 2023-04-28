@@ -13,7 +13,11 @@
                 {{ question.body }}
               </a>
               <br>
-              <p>Tags: {% for tag in question.tags %}{{ tag.name }}{% if not loop.last %}, {% endif %}{% endfor %}</p>
+              <p>Tags: {% for tag in question.tags %}
+                <a href="{{ url_for('tag_page', id=tag.id) }}">
+                  {{ tag.name }}{% if not loop.last %}, {% endif %}{% endfor %}
+                </a>
+                </p>
           </td>
       </tr>
 </table>

@@ -87,6 +87,12 @@ class Tag(db.Model):
     name = db.Column(db.String(30), unique=True)
     questions = db.relationship('Question', secondary='question_tag', backref='tags')
 
+    def tag_questions(self):
+        questions = Question.query.join(
+            question_tag, (question_tag.c.question_id == Question.id)).filter(
+                question_tag.c.tag_id == self.id)
+        return questions.order_by(Question.timestamp.desc())
+
 question_tag = db.Table('question_tag',
     db.Column('question_id', db.Integer, db.ForeignKey('question.id')),
     db.Column('tag_id', db.Integer, db.ForeignKey('tag.id'))

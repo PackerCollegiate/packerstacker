@@ -1,4 +1,50 @@
-2023-04-26 13:10:42,759 ERROR: Exception on / [POST] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+2023-04-26 14:12:59,873 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:13:04,538 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:13:08,599 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:13:28,654 ERROR: Exception on /index [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 23, in index
+    if form.validate_on_submit(print(form.tags.data)):
+AttributeError: 'QuestionForm' object has no attribute 'tags'
+2023-04-26 14:13:56,902 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:15:45,169 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:19:45,568 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:20:18,855 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:20:24,187 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:20:34,111 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:21:31,735 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:21:36,588 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:23:26,910 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:25:15,025 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:25:19,863 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:25:27,498 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:25:50,417 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:27:06,687 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:27:12,189 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:27:15,099 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:27:19,318 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:29:30,421 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:30:40,869 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:32:18,046 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:33:35,679 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:35:33,715 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:35:58,425 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:36:30,393 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:36:56,185 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:39:02,536 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 14:39:54,461 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 20:56:06,139 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-26 20:56:16,268 ERROR: Exception on / [POST] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -25,115 +71,7 @@ Traceback (most recent call last):
     setattr(self, k, kwargs[k])
   File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 459, in __set__
     self.impl.set(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 1268, in set
-    value = self.fire_replace_event(state, dict_, value, old, initiator)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 1294, in fire_replace_event
-    value = fn(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 119, in set_
-    newvalue_state = attributes.instance_state(newvalue)
-AttributeError: 'BaseQuery' object has no attribute '_sa_instance_state'
-2023-04-26 13:31:35,758 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 13:31:46,023 ERROR: Exception on / [POST] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1693, in _entity_namespace_key
-    return getattr(ns, key)
-AttributeError: type object 'Tag' has no attribute 'tag_name'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 25, in index
-    tags=Tag.query.filter_by(tag_name=form.tags.data))
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1793, in filter_by
-    clauses = [
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 1794, in <listcomp>
-    _entity_namespace_key(from_entity, key) == value
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/base.py", line 1695, in _entity_namespace_key
-    util.raise_(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
-    raise exception
-sqlalchemy.exc.InvalidRequestError: Entity namespace for "tag" has no property "tag_name"
-2023-04-26 13:32:54,421 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-26 13:32:59,895 ERROR: Exception on / [POST] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1808, in _execute_context
-    self.dialect.do_execute(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.OperationalError: no such table: join
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 24, in index
-    question = Question(body=form.question.data, author=current_user,
-  File "<string>", line 4, in __init__
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 480, in _initialize_instance
-    manager.dispatch.init_failure(self, args, kwargs)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
-    compat.raise_(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
-    raise exception
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 477, in _initialize_instance
-    return manager.original_init(*mixed[1:], **kwargs)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/decl_base.py", line 1157, in _declarative_constructor
-    setattr(self, k, kwargs[k])
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 459, in __set__
-    self.impl.set(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/dynamic.py", line 185, in set
-    old_collection = util.IdentitySet(self.get(state, dict_))
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/_collections.py", line 480, in __init__
-    self.update(iterable)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/_collections.py", line 584, in update
-    self._members.update((id(obj), obj) for obj in iterable)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2887, in __iter__
-    return self._iter().__iter__()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/dynamic.py", line 351, in _iter
-    return self._generate(sess)._iter()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2894, in _iter
-    result = self.session.execute(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1692, in execute
-    result = conn._execute_20(statement, params or {}, execution_options)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1620, in _execute_20
-    return meth(self, args_10style, kwargs_10style, execution_options)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
-    return connection._execute_clauseelement(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1487, in _execute_clauseelement
-    ret = self._execute_context(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1851, in _execute_context
-    self._handle_dbapi_exception(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2032, in _handle_dbapi_exception
-    util.raise_(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
-    raise exception
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1808, in _execute_context
-    self.dialect.do_execute(
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: join
-[SQL: SELECT "join".tag_id AS join_tag_id, "join".question_id AS join_question_id, "join".join_id AS join_join_id 
-FROM "join" 
-WHERE ? = "join".question_id]
-[parameters: (2,)]
-(Background on this error at: https://sqlalche.me/e/14/e3q8)
-2023-04-26 14:12:54,227 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 1563, in set
+    raise TypeError(
+TypeError: Incompatible collection type: BaseQuery is not list-like
+2023-04-26 21:04:07,044 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
