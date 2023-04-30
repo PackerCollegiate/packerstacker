@@ -25,7 +25,7 @@ def index():
         question = Question(body=form.question.data, author=current_user)
         db.session.add(question)
 
-        tag_names = form.tags.data.split(',')
+        tag_names = form.tags.data.split(', ')
         for name in tag_names:
             tag = Tag.query.filter_by(name=name.strip()).first()
             if not tag:

@@ -1,107 +1,28 @@
-2023-04-14 13:56:28,482 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-14 13:56:31,832 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-14 13:56:33,578 ERROR: Exception on / [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+2023-04-24 08:46:44,177 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 08:47:05,051 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 08:47:39,630 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 08:47:53,916 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 08:47:59,855 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 08:56:19,331 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 09:04:42,049 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 09:04:53,612 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 09:05:07,867 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 09:05:19,527 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 09:06:45,223 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 09:06:49,561 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 09:06:56,710 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 09:09:30,535 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 09:17:39,224 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 09:20:22,083 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 09:20:30,789 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 09:20:35,702 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 09:20:50,636 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 09:21:01,233 ERROR: Exception on / [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
     rv = self.handle_user_exception(e)
-<<<<<<< Updated upstream
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 172, in question_page
-    return render_template("question_page.html", title='Question', form=form, question=question,
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
-    return _render(app, template, context)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 130, in _render
-    rv = template.render(context)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
-    self.environment.handle_exception()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/question_page.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
-    {%- block html %}
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
-    {% block body -%}
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
-    {% block content -%}
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 48, in block 'content'
-    {% block app_content %}{% endblock %}
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/question_page.html", line 7, in block 'app_content'
-    {% include '_question_view.html' %}
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/_question_view.html", line 5, in top-level template code
-    {%if user.type %}<p>&#x2713; Teacher</p>} {%endif%}
-  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 485, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'user' is undefined
-2023-04-08 15:49:56,386 ERROR: Exception on / [GET] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 36, in index
-    return render_template('index.html', title='Home', form=form,
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
-    return _render(app, template, context)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/templating.py", line 130, in _render
-    rv = template.render(context)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 1301, in render
-    self.environment.handle_exception()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/index.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
-    {%- block html %}
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
-    {% block body -%}
-  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
-    {% block content -%}
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/base.html", line 48, in block 'content'
-    {% block app_content %}{% endblock %}
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/index.html", line 11, in block 'app_content'
-    {% include '_question.html' %}
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/templates/_question.html", line 6, in top-level template code
-    {%if user.type %}<p>&#x2713; Teacher</p>} {%endif%}
-  File "/Applications/anaconda3/lib/python3.9/site-packages/jinja2/environment.py", line 485, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'user' is undefined
-2023-04-08 15:50:32,751 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-08 15:51:25,927 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-08 15:52:27,088 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-08 15:53:18,393 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-08 15:54:17,509 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-08 15:54:59,462 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-08 15:55:31,941 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-08 15:59:00,272 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-08 16:02:02,843 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-08 16:05:51,610 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-08 16:56:42,408 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-10 11:28:45,626 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
-2023-04-10 11:34:18,240 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
-2023-04-13 11:15:49,379 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
-2023-04-13 11:17:25,083 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
-2023-04-13 11:18:42,411 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
-=======
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1818, in full_dispatch_request
     rv = self.preprocess_request()
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2309, in preprocess_request
@@ -118,7 +39,7 @@ jinja2.exceptions.UndefinedError: 'user' is undefined
     current_app.login_manager._load_user()
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/login_manager.py", line 364, in _load_user
     user = self._user_callback(user_id)
-  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/models.py", line 104, in load_user
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/models.py", line 93, in load_user
     return User.query.get(int(id))
   File "/Applications/anaconda3/lib/python3.9/site-packages/flask_sqlalchemy/model.py", line 30, in __get__
     return cls.query_class(
@@ -140,17 +61,54 @@ jinja2.exceptions.UndefinedError: 'user' is undefined
     _do_configure_registries(registries, cascade)
   File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 3457, in _do_configure_registries
     mapper._post_configure_properties()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1917, in _post_configure_properties
-    prop.init()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/interfaces.py", line 231, in init
-    self.do_init()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2150, in do_init
-    self._process_dependent_arguments()
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2245, in _process_dependent_arguments
-    self.target = self.entity.persist_selectable
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 1113, in __get__
-    obj.__dict__[self.__name__] = result = self.fget(obj)
-  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/relationships.py", line 2132, in entity
-    raise sa_exc.ArgumentError(
-sqlalchemy.exc.ArgumentError: relationship 'tags' expects a class or a mapper argument (received: <class 'flask_sqlalchemy.extension.SQLAlchemy._make_table_class.<locals>.Table'>)
->>>>>>> Stashed changes
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/mapper.py", line 1920, in _post_configure_properties
+    prop.post_instrument_class(self)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/interfaces.py", line 678, in post_instrument_class
+    self.strategy.init_class_attribute(mapper)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/dynamic.py", line 36, in init_class_attribute
+    raise exc.InvalidRequestError(
+sqlalchemy.exc.InvalidRequestError: On relationship Question.tags, 'dynamic' loaders cannot be used with many-to-one/one-to-one relationships and/or uselist=False.
+2023-04-24 09:22:06,520 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 09:22:11,370 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 09:22:13,974 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-24 09:25:32,319 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-25 10:35:33,728 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-25 10:44:53,659 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-25 10:57:38,992 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-25 11:02:32,642 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-25 11:05:58,808 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-04-25 11:06:27,427 ERROR: Exception on / [POST] [in /Applications/anaconda3/lib/python3.9/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/lizuckerman/Code/GitHub/packerstacker/app/routes.py", line 24, in index
+    question = Question(body=form.question.data, author=current_user, tags=form.tags.data)
+  File "<string>", line 4, in __init__
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 480, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 477, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/decl_base.py", line 1157, in _declarative_constructor
+    setattr(self, k, kwargs[k])
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 459, in __set__
+    self.impl.set(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 1268, in set
+    value = self.fire_replace_event(state, dict_, value, old, initiator)
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/attributes.py", line 1294, in fire_replace_event
+    value = fn(
+  File "/Applications/anaconda3/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 119, in set_
+    newvalue_state = attributes.instance_state(newvalue)
+AttributeError: 'str' object has no attribute '_sa_instance_state'
+2023-04-25 11:09:33,858 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
