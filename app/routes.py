@@ -154,7 +154,7 @@ def unfollow(username):
 @app.route('/explore')
 def explore():
     page = request.args.get('page', 1, type=int)
-    tags = Tag.query.all()
+    tags = Tag.query.order_by(Tag.name)
     questions = Question.query.order_by(Question.timestamp.desc()).paginate(page=page, per_page=app.config['QUESTIONS_PER_PAGE'], error_out=False)
     next_url = url_for('explore', page=questions.next_num) \
         if questions.has_next else None
