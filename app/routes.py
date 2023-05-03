@@ -213,3 +213,7 @@ def search():
     form = EmptyForm()
     return render_template('search_results.html', tag=tag, questions=questions.items,
                            next_url=next_url, prev_url=prev_url, form=form)
+@app.route('/boy')
+def boy():
+    print('hello world')
+    return render_template('boy.html')

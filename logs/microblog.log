@@ -106,3 +106,6 @@ sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) database is locked
 2023-05-02 13:11:11,855 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
 2023-05-02 13:11:29,506 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
 2023-05-02 13:12:03,559 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]
+2023-05-02 13:32:17,041 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-05-03 08:25:31,974 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
+2023-05-03 08:28:02,963 INFO: Microblog startup [in /Users/lizuckerman/Code/GitHub/packerstacker/app/__init__.py:46]
