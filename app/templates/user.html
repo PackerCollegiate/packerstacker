@@ -2,12 +2,13 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-    <table>
+<div class="" style="background-color:mintcream">
+    <table style="background-color:lightseagreen; width: 100%">
       <tr valign="top">
-          <td><img src="{{ user.avatar(128) }}"></td>
-          <td>
-            <h1>User: {{ user.username }}</h1>
-            {%if user.type %}<p>Teacher</p> {% else %} <p>Student </p>{% endif %}
+          <td style="padding:20px" style="width:10%"><img src="{{ user.avatar(128) }}" style="width:100%"></td>
+          <td style="background-color:MediumAquaMarine; padding:20px; width:80%">
+            <h1>User {{ user.username }}</h1>
+            {%if user.type %}<h4>Teacher</h4> {% else %} <p>Student </p>{% endif %}
             {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
             {% if user.last_seen %}<p>Last seen on: {{ user.last_seen }}</p>{% endif %}
             <p>{{ user.followers.count() }} followers, {{ user.followed.count() }} following.</p>
@@ -35,6 +36,7 @@
     {% for question in questions %}
         {% include '_question.html' %}
     {% endfor %}
+  </div>
     {% if prev_url %}
     <a href="{{ prev_url }}">Newer questions</a>
     {% endif %}

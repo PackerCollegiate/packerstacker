@@ -1,9 +1,9 @@
 <table class="table table-hover">
         <tr>
-            <td width="70px">
-                    <a><img src="{{ question.author.avatar(70) }}" />
+            <td width="70px" style="background-color:MediumTurquoise">
+                    <a><img src="{{ question.author.avatar(70) }}" style="padding:10px" />
             </td>
-            <td>
+            <td style="background-color:PaleTurquoise">
                 <a href="{{ url_for('user', username=question.author.username) }}">
                     {{ question.author.username }} {%if question.author.type %} &#x2713; {%endif%}
                 </a>

@@ -2,10 +2,14 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
+<div class="" style="background-color:mintcream">
+
+
     <h1>Hi, {{ current_user.username }}!</h1>
     {% if form %}
     {{ wtf.quick_form(form) }}
     <br>
+</div>
     {% endif %}
     {% for question in questions %}
         {% include '_question.html' %}

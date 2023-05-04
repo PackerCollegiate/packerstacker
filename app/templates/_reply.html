@@ -1,9 +1,9 @@
-<table class="table table-hover">
+<table class="table table-hover" style="background-color:PaleTurquoise">
         <tr>
             <td width="70px">
                     <a><img src="{{ reply.author.avatar(70) }}" />
             </td>
-            <td>
+            <td style="width:100%; background-color:lightCyan">
                 <a href="{{ url_for('user', username=reply.author.username) }}">
                     {{ reply.author.username }} {%if reply.author.type %} &#x2713; {%endif%}
                 </a>

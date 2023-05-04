@@ -2,6 +2,7 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
+<div class="" style="background-color:mintcream">
   <table>
     <h1>{{ question.author.username }} asks: </h1>
         {% include '_question_view.html' %}
@@ -11,10 +12,10 @@
   {{ wtf.quick_form(form) }}
   <br>
   {% endif %}
-
   {% for reply in replies %}
       {% include '_reply.html' %}
   {% endfor %}
+  </div>
   <nav aria-label="...">
       <ul class="pager">
           <li class="previous{% if not prev_url %} disabled{% endif %}">
