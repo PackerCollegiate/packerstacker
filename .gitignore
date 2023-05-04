@@ -128,3 +128,25 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+app.db
+logs/microblog.log
+logs/microblog.log.1
+logs/microblog.log.10
+logs/microblog.log.2
+logs/microblog.log.4
+logs/microblog.log.5
+logs/microblog.log.6
+logs/microblog.log.7
+logs/microblog.log.8
+logs/microblog.log.9
+app.db
+logs/microblog.log
+logs/microblog.log.1
+logs/microblog.log.10
+logs/microblog.log.2
+logs/microblog.log.4
+logs/microblog.log.5
+logs/microblog.log.6
+logs/microblog.log.7
+logs/microblog.log.8
+logs/microblog.log.9
