@@ -24,15 +24,8 @@
                         <li><a href="{{ url_for('index') }}">Home</a></li>
                         <li><a href="{{ url_for('explore') }}">Explore</a></li>
                         <li><form action="{{ url_for('search') }}" method="POST">
-    			                   <input type="text" name="query" placeholder="Search">
-    			                    <button type="submit" style="background-color:lightsalmon">Go</button>
-    		                </form></li>
-                        <!-- {% if current_user.is_anonymous %}
-                        <li><a href="{{ url_for('login') }}">Login</a></li>
-                        {% else %}
-                        <li><a href="{{ url_for('user', username=current_user.username) }}">Profile</a></li>
-                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
-                        {% endif %} -->
+    			                   <input type="text" name="search" placeholder="Search">
+    			                    <button type="submit" style="background-color:lightsalmon">Go</button></form></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">

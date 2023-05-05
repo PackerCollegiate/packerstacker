@@ -198,20 +198,20 @@ def tag_page(id):
                            next_url=next_url, prev_url=prev_url, form=form)
 
 
-@app.route('/search', methods=['GET', 'POST'])
+@app.route('/search', methods=['POST'])
 def search():
-    search_terms = request.form['search'].split( )
+    search_terms = request.form['search'].split()
     name = search_terms[0]
     tag = Tag.query.filter_by(name=name).first_or_404()
     page = request.args.get('page', 1, type=int)
     questions = tag.tag_questions().paginate(
         page=page, per_page=app.config['QUESTIONS_PER_PAGE'], error_out=False)
-    next_url = url_for('search', tag = tag, page=questions.next_num) \
+    next_url = url_for('search', name=name, page=questions.next_num) \
         if questions.has_next else None
-    prev_url = url_for('tag/<id>', tag=tag, page=questions.prev_num) \
+    prev_url = url_for('search', name=name, page=questions.prev_num) \
         if questions.has_prev else None
     form = EmptyForm()
-    return render_template('search_results.html', tag=tag, questions=questions.items,
+    return render_template('search_results.html', questions=questions.items,
                            next_url=next_url, prev_url=prev_url, form=form)
 @app.route('/boy')
 def boy():

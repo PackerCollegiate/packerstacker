@@ -1,24 +1,25 @@
 {% extends "base.html" %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
-{% block content %}
+{% block app_content %}
   <h1>Search Results</h1>
   <p>Found {{ questions|length }} questions:</p>
   <ul>
     {% for question in questions %}
-      <li>
-        <h2>{{ question.body }}</h2>
-        <p>Tags: {{ question.tags|join(', ') }}</p>
-        <p>Posted by User {{ question.user_id }} at {{ question.timestamp }}</p>
-        <ul>
-          {% for reply in question.q_replies() %}
-            <li>
-              <p>{{ reply.body }}</p>
-              <p>Posted by User {{ reply.user_id }} at {{ reply.timestamp }}</p>
-            </li>
-          {% endfor %}
-        </ul>
-      </li>
+        {% include '_question.html' %}
     {% endfor %}
-  </ul>
+    <nav aria-label="...">
+        <ul class="pager">
+            <li class="previous{% if not prev_url %} disabled{% endif %}">
+                <a href="{{ prev_url or '#' }}">
+                    <span aria-hidden="true">&larr;</span> Newer questions
+                </a>
+            </li>
+            <li class="next{% if not next_url %} disabled{% endif %}">
+                <a href="{{ next_url or '#' }}">
+                    Older questions <span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 {% endblock %}
