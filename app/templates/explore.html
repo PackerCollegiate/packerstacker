@@ -6,10 +6,14 @@
 
 
     <h1>Hi, {{ current_user.username }}!</h1>
-    <p> Explore by tag:
+    <p> Explore by tag:   </p>
+      <div>
     {% for tag in tags %}
-      <a href="{{ url_for('tag_page', id=tag.id) }}">
-        {{ tag.name }}{% if not loop.last %}, {% endif %}{% endfor %} </a> </p>
+      <form action="{{ url_for('tag_page', id=tag.id) }}">
+      <button style="background-color:lightsalmon; padding:5px; border-radius: 4px">
+        {{ tag.name }}{% if not loop.last %}, </button></form> {% endif %}{% endfor %}
+        </div>
+    <div>
     <br>
     <h4> All questions: </h4>
     {% for question in questions %}
