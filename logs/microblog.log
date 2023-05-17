@@ -50,3 +50,4 @@ FROM question JOIN question_tag ON question_tag.question_id = question.id
 WHERE question_tag.tag_id = ? ORDER BY question.timestamp DESC)) AS anon_1]
 [parameters: (1, 2)]
 (Background on this error at: https://sqlalche.me/e/14/e3q8)
+2023-05-15 14:38:29,545 INFO: Microblog startup [in /Users/kavolkova/Desktop/Code/packerstacker/app/__init__.py:46]

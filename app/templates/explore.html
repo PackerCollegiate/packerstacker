@@ -7,7 +7,7 @@
 
     <h1>Hi, {{ current_user.username }}!</h1>
     <p> Explore by tag:   </p>
-      <div>
+      <div class="row">
     {% for tag in tags %}
       <form action="{{ url_for('tag_page', id=tag.id) }}">
       <button style="background-color:lightsalmon; padding:5px; border-radius: 4px">
