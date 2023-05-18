@@ -6,32 +6,42 @@
 
 
     <h1>Hi, {{ current_user.username }}!</h1>
-    <p> Explore by tag:   </p>
+
+    <div class="container">
       <div class="row">
-    {% for tag in tags %}
-      <form action="{{ url_for('tag_page', id=tag.id) }}">
-      <button style="background-color:lightsalmon; padding:5px; border-radius: 4px">
-        {{ tag.name }}{% if not loop.last %}, </button></form> {% endif %}{% endfor %}
+
+
+        <p> Explore by tag:   </p>
+          <div class="col-md-3">
+            {% for tag in tags %}
+            <form action="{{ url_for('tag_page', id=tag.id) }}">
+              <button style="background-color:lightsalmon; padding:5px; border-radius: 4px">
+                {{ tag.name }}{% if not loop.last %}, </button></form> {% endif %}{% endfor %}
+            </div>
+
+
+          <div class="col-md-8">
+          <h4> All questions: </h4>
+          {% for question in questions %}
+            {% include '_question.html' %}
+          {% endfor %}
         </div>
-    <div>
-    <br>
-    <h4> All questions: </h4>
-    {% for question in questions %}
-        {% include '_question.html' %}
-    {% endfor %}
-  </div>
-    <nav aria-label="...">
-        <ul class="pager">
-            <li class="previous{% if not prev_url %} disabled{% endif %}">
-                <a href="{{ prev_url or '#' }}">
-                    <span aria-hidden="true">&larr;</span> Newer questions
-                </a>
-            </li>
-            <li class="next{% if not next_url %} disabled{% endif %}">
-                <a href="{{ next_url or '#' }}">
-                    Older questions <span aria-hidden="true">&rarr;</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
+        </div>
+        </div>
+
+          <nav aria-label="...">
+            <ul class="pager">
+              <li class="previous{% if not prev_url %} disabled{% endif %}">
+                  <a href="{{ prev_url or '#' }}">
+                      <span aria-hidden="true">&larr;</span> Newer questions
+                  </a>
+              </li>
+              <li class="next{% if not next_url %} disabled{% endif %}">
+                  <a href="{{ next_url or '#' }}">
+                      Older questions <span aria-hidden="true">&rarr;</span>
+                  </a>
+              </li>
+          </ul>
+      </nav>
+
 {% endblock %}
