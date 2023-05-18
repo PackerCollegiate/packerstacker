@@ -203,10 +203,8 @@ def search():
     first_q = Tag.query.filter_by(name=search_terms[0]).first_or_404()
     questions = first_q.tag_questions()
     if len(search_terms) >1:
-        for i in range(1,len(search_terms)):
-            new_q=Tag.query.filter_by(name=search_terms[i]).first_or_404()
-            new_questions = new_q.tag_questions()
-            questions = questions.union(new_questions).all()
+        flash('Please enter one search term')
+        return redirect(url_for('index'))
     page = request.args.get('page', 1, type=int)
     questions = questions.paginate(
         page=page, per_page=app.config['QUESTIONS_PER_PAGE'], error_out=False)
